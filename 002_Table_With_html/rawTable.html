@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raw table</title>
+
+    <style>
+        .my-table{
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="text-align: center; color: orangered; font-family: 'Courier New'; ">
+        How to create A table in html
+    </h1>
+        <p>There are some essential tags below:</p>
+        
+        <dl>
+            <dt>&lt;table&gt; &lt;/table&gt;</dt>
+                <dd>This is base for every table</dd>
+            <dt>&lt;th&gt; &lt;/th&gt;</dt>
+                <dd>We can create table header by this</dd>
+            <dt>&lt;tr&gt; &lt;/tr&gt;</dt>
+                <dd>It creates a new row for table</dd>
+            <dt>&lt;td&gt; >&lt;/td&gt;</dt>
+                <dd>Use this inside of &lt;tr&gt; &lt;/tr&gt; to create diffrent column</dd>
+            <dt>&lt;caption&gt;...&lt;/caption&gt;</dt>
+                <dd>write your table caption between this tag</dd>
+        </dl>
+
+        <h2>For Example:</h2>
+        <p>This is a  Table without "border attribute"</p>
+
+        <table class="my-table">
+            <tr>
+                <th>Forename</th>
+                <th>Surname</th>
+                <th>City</th>
+                <th>Age</th>
+                <th>job</th>
+                <th>Salary</th>
+            </tr>
+
+            <tr>
+                <td>Charlie</td>
+                <td>Ashford</td>
+                <td>London</td>
+                <td>23</td>
+                <td>Chef</td>
+                <td>$7000</td>
+            </tr>
+
+            <tr>
+                <td>Annie</td>
+                <td>Ravenwood</td>
+                <td>Manchester</td>
+                <td>20</td>
+                <td>weitress</td>
+                <td>$4000</td>
+            </tr>
+        </table>
+        <br>
+        <p>This is a table with "border" attribute</p>
+        
+        <table class="my-table" border="1">
+            <tr>
+                <th>Forename</th>
+                <th>Surname</th>
+                <th>City</th>
+                <th>Age</th>
+                <th>job</th>
+                <th>Salary</th>
+            </tr>
+
+            <tr>
+                <td>Charlie</td>
+                <td>Ashford</td>
+                <td>London</td>
+                <td>23</td>
+                <td>Chef</td>
+                <td>$7000</td>
+            </tr>
+
+            <tr>
+                <td>Annie</td>
+                <td>Ravenwood</td>
+                <td>Manchester</td>
+                <td>20</td>
+                <td>weitress</td>
+                <td>$4000</td>
+            </tr>
+        </table>
+        <p><strong>*border attribute: &lt;table border = "1"&gt; ... &lt;/table&gt;*</strong></p>
+        <br>
+
+        <h2>A little bit complex table</h2>
+        <p>Do you want to draw a table like the below one? Don't worry it's really simple
+            and all things you need are <strong>colspan="number"</strong> & <strong>rowspan="number"</strong> 
+            inside of th or td tag like:
+        </p>
+        <code style="font-size: 1.2em;">
+            &lt;th colspan = "2"&gt; &lt;/th&gt;
+                            or 
+            &lt;td rowspan = "2"&gt; &lt;/td&gt;
+        </code>
+        <p style="font-size: 1.2em;">or</p>
+        <code style="font-size: 1.2em;">
+            &lt;td rowspan = "2"&gt; &lt;/td&gt;
+        </code>
+        <pre style="text-align: center;">
+        -----------------------------------------------------------------
+        |                        Weekly Schedule                        |
+        -----------------------------------------------------------------
+        |    Time    |    Mon    |    Tue    |    Wed    |     Thu    |
+        -----------------------------------------------------------------
+        |    9:00    |          Math         |  Physics  |   English  |
+        -----------------------------------------------------------------
+        |   10:00    |                         Break                    |
+        -----------------------------------------------------------------
+        |   11:00    |           |  Biology  |                          |
+        -------------- Chemistry -------------          History         -
+        |   12:00    |           |    Art    |                          |
+        -----------------------------------------------------------------
+        </pre>
+        <p>so this is the table:</p>
+        <table border="1" class="my-table">
+            <caption>complex Table</caption>
+            <tr>
+                <th colspan="5">Weekly Schedule</th>
+            </tr>
+
+            <tr>
+                <td>Time</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+            </tr>
+
+            <tr>
+                <td>9:00</td>
+                <td colspan="2">Math</td>
+                <td>Physics </td>
+                <td>English</td>
+            </tr>
+
+            <tr>
+                <td>10:00</td>
+                <td colspan="4">Break</td>    
+            </tr>
+            <tr>
+                <td>11:00</td>
+                <td rowspan="2">Chemistry</td>
+                <td>Biology</td>
+                <td colspan="2" rowspan="2">History</td>
+            </tr>
+                            
+            <tr>
+                <td>12:00</td>
+                <!-- you should not put this again:<td>Chemistry</td>-->
+                <td>Art</td>
+                <!--<td colspan="2">History</td>-->
+            </tr>
+            
+        </table>
+
+        <p><em>Note: </em>Please do not repeate rowspan cell in other continuing cells</p>
+</body>
+</html>

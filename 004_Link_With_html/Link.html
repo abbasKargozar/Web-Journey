@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link</title>
+</head>
+
+<body>
+    <h1>HTML Hyperlinks: A Simple Yet Essential Tool</h1>
+    <p>Creating hyperlinks in HTML is a fundamentally simple concept, 
+        yet it remains one of the most vital and frequently utilised features 
+        in web development. Hyperlinks are the glue that holds the web together, 
+        allowing users to navigate seamlessly between different pages and resources. 
+        Below are six primary ways you can use the anchor tag &lt;a&gt; to enhance your 
+        web pages.
+    </p>
+        <nav>
+            <ul style="list-style-type: none;">
+                <li><a href="#one">1.Linking to an External Website</a></li>
+                <li><a href="#two">2.Opening Links in a New Tab</a>
+                    <ul style="list-style-type: none;">
+                        <li><a href="#two-one">2.1 All in one</a></li>
+                        <li><a href="#two-two">2.2 Inline Frame</a></li>
+                    </ul>
+                </li>
+                <li><a href="#three">3. Navigating Within the Same Page (Anchor Links)</a></li>
+                <li><a href="#four">4. Initiating an Email</a></li>
+                <li><a href="#five">5. Triggering a Phone Call</a></li>
+                <li><a href="#six">6. Downloading Files</a></li>
+            </ul>
+        </nav>
+    <h2 id="one">1. Linking to an External Website</h2>
+    <p>
+        The most standard use of an anchor tag is to direct users to a completely 
+        different webpage. This is achieved by providing the full URL within the 
+        href attribute, allowing visitors to navigate to external resources with a 
+        single click.
+        Be aware,Do <em>**not**</em> write websites address like this "googl.com", 
+        because it tells html look for it at curent directory. insted of you should write 
+        the protocol like http://, https:// , ftp:// or etc.   
+        For example:
+        <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+            &lt;ul&gt;
+
+                &lt;li&gt;&lt;a href="https://google.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://youtube.com"&gt;open Youtube&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://www.w3schools.com"&gt;open W3Schools&lt;/a&gt;&lt;/li&gt;
+                            &lt;!-- look at some wrong example below.--&gt;
+                &lt;li&gt;&lt;a href="google.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;                
+                &lt;li&gt;&lt;a href="www.w3schools.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt;
+        </code></pre>
+
+        <ul style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+            <li><a href="https://google.com">open google</a></li>
+            <li><a href="https://youtube.com">open youtube</a></li>
+            <li><a href="https://www.w3schools.com/">open w3shool</a></li>
+
+            <li><a href="google.com"> Wrong: google</a></li>
+            <li><a href="www.w3schools.com/">Wrong: w3shool</a></li>
+        </ul>
+    </p>
+
+    <p>
+        
+    </p>
+    <h2 id="two">2. Opening Links in a New Tab</h2>
+    <p>
+        Sometimes, you wish to keep your current page open whilst directing the 
+        user elsewhere. By adding the target="_blank" attribute to your link, 
+        the destination webpage will open in a fresh browser tab, ensuring the user 
+        does not lose their place on your site.
+        <strong>Security allert: </strong> be aware and always use rel= "noopener noreferrer" for evoiding security attacs.
+        I'm goning to cover it in future by web security jeurny.
+        For example:
+        <pre style="background-color: gainsboro; width: 1100px; margin: 0 auto; padding:10px;"><code>
+            &lt;ul&gt;
+
+                &lt;li&gt;&lt;a href="https://github.com/abbasKargozar" target = "_blank" rel="noopener noreferrer"&gt;open my github in new tab&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://google.com" target = "_blank" rel="noopener noreferrer"&gt;open google in new tab&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://www.w3schools.com" target = "_blank" rel="noopener noreferrer&gt;open W3Schools in new tab&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt;
+
+        </code></pre>
+
+        <ul style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+            <li><a href="https://github.com/abbasKargozar" target="_blank" rel="noopener noreferrer">open my github in a new tab</a></li>
+            <li><a href="https://google.com" target="_blank" rel="nopener nooreferrer">open google in a new tab</a></li>
+            <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">open w3shool in a new tab</a></li>
+        </ul>
+
+
+    </p>
+
+    <h3 id="two-one">2.1 All in one</h3>
+    <p>
+        Sometimes you may want all of your external links to open in the same browser tab instead of 
+        creating a new tab every time. This can provide a cleaner browsing experience and prevent users 
+        from ending up with dozens of open tabs. To achieve this, assign the same custom name to 
+        the "target" attribute for every link, such as target = "NewTab". The first click creates a 
+        new tab with that name, and every subsequent click loads the new page into the same tab instead 
+        of opening another one. This behavior works with any custom target name, not just "NewTab". 
+        Keep in mind that if you use rel = "noopener" or rel = "noreferrer" with these links, 
+        some browsers and websites may no longer allow the named tab to be reused, so this technique 
+        may not work as expected.
+
+        <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+            &lt;ul&gt;
+
+                &lt;li&gt;&lt;a href="https://github.com/abbasKargozar" target = "NewTab"&gt;open my github in new tab&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://example.com" target = "NewTab"&gt;open example.com in the same tab&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="https://www.w3schools.com" target = "NewTab"&gt;open W3Schools in the same tab&lt;/a&gt;&lt;/li&gt;
+
+            &lt;/ul&gt;
+
+        </code></pre>
+        
+        <ul style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+            <li><a href="https://github.com/abbasKargozar" target="NewTab">open my github in a new tab</a></li>
+            <li><a href="https://example.com" target="NewTab">open example in a new tab</a></li>
+            <li><a href="https://www.w3schools.com" target="NewTab">open w3shool in a new tab</a></li>
+        </ul>
+
+    </p>
+    <h3 id="two-two">2.2 Inline Frame</h3>
+    <p>
+        It may seem a little unusual to introduce <em>inline frames &lt;iframe&gt;</em>  
+        at this point, but there is a good reason for it. While working with the "target" 
+        attribute, you will likely come across reserved values such as 
+        "_self", "_parent", and "_top". These values are closely related to frames and iframes, 
+        so it is helpful to understand what they mean before using them. An &lt;iframe&gt; allows 
+        you to embed another webpage inside your own, creating a separate browsing context 
+        within the page. A common example is an embedded Google Map on a website—you are 
+        viewing an actual webpage displayed inside another webpage, as if a small browser window 
+        were built directly into the site. Understanding how iframes work will make the different 
+        "target" values much easier to understand.
+
+
+    </p>
+
+    <p>
+        As an example, **OpenStreetMap** is one of the most popular open-source mapping platforms 
+        and is widely used to embed interactive maps into websites. In this lesson, we use it to 
+        display a map inside an "&lt;iframe&gt;". Whenever you embed content from another source, make 
+            sure you respect the provider's license, terms of use, and copyright requirements. 
+            Always verify that you have permission to display the content and provide proper attribution 
+            when it is required.
+    </p>
+
+    <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+        &lt;iframe width="550" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=...&gt;&lt;/iframe&gt;
+    </code></pre>
+    <br>
+    <br>
+        <iframe width="550" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=0.15380859375000003%2C37.87485339352928%2C24.675292968750004%2C46.36209301204985&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small>
+            <a href="https://www.openstreetmap.org/?#map=6/42.26/12.41" target="_blank">View Larger Map</a></small>
+
+    <p>
+        It's also worth remembering that an "&lt;iframe&gt;" doesn't have to display an external website.
+        You can use it to load different pages from your own website as well, which can be useful
+        for dashboards, documentation, previews, or other isolated sections of an application. 
+        Later in this course, we'll build a few practical examples that demonstrate these use cases. 
+        We'll also revisit iframes in the Web Security section, where you'll learn about common 
+        iframe-related vulnerabilities and how modern browsers help protect against them.
+
+    </p>
+
+    <h2 id="three">3. Navigating Within the Same Page (Anchor Links)</h2>
+    <p>
+        For lengthy documents or single-page websites, jumping to a specific section 
+        is highly convenient. You can link directly to a specific element by appending 
+        a hash (#) followed by the element’s id to the href value, enabling smooth 
+        internal navigation. 
+    </p>
+    <p>
+        A common example of this feature is the **"Back to Top"** button found on many websites. 
+        When clicked, it takes the user from the footer or any other part of the page back to the 
+        top by linking to an element with "#". for example I used: 
+
+    </p>
+
+    <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>   &lt;a href="#"&gt; ^Go to top ^ &lt;/a&gt; </code></pre>
+    <p><i><b>Note: </b>A small amount of CSS is often used to  
+        style the button and position it on the screen, 
+        making it more noticeable and user-friendly.
+    </i></p>
+
+    <p>
+        The same technique is also widely used for tables of contents, allowing readers to jump directly 
+        to different sections of a long document or single-page website. In fact, this page is organized 
+        using the same approach, making it easier to navigate between topics without excessive scrolling.
+    </p>
+
+    <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+        &lt;nav&gt;
+            &lt;ul style="list-style-type: none;"&gt;
+                &lt;li&gt;&lt;a href="#one">1.Linking to an External Website&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#two"&gt;2.Opening Links in a New Tab&lt;/a&gt;
+                    &lt;ul style="list-style-type: none;"&gt;
+                        &lt;li&gt;&lt;a href="#two-one"&gt;2.1 All in one&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#two-two"&gt;2.2 Inline Frame&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#three"&gt;3. Navigating Within the Same Page (Anchor Links)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#four"&gt;4. Initiating an Email&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#five"&gt;5. Triggering a Phone Call&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#six"&gt;6. Downloading Files&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+        </code></pre>
+
+    <h2 id="four">4. Initiating an Email</h2>
+    <p>
+        You can prompt the user’s default email client to open automatically with 
+        a predefined recipient address. Using the mailto: scheme within the href 
+        attribute makes setting up a ‘Contact Us’ button entirely effortless.
+
+        for example:
+    </p>
+
+    <p style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;">
+        &lt;a href="mailto:support@example.com"&gt;email&lt;/a&gt;
+    </p>
+    <div style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+            <a href="mailto:support@example.com">email</a>
+    </div>
+    <p>
+        When creating an email link with the mailto: protocol, 
+        you can prefill several fields to make it easier for 
+        users to compose a message.
+        <dl style="background-color: gainsboro; width: 960px; margin: 0 auto; padding: 10px;">
+            <dt>cc</dt>
+            <dd>Adds one or more recipients who will receive a visible copy of the email.</dd>
+
+            <dt>bcc</dt>
+            <dd>Adds one or more recipients who receive a hidden copy that other recipients cannot see.</dd>
+
+            <dt>subject</dt>
+            <dd>Sets the default subject line of the email.</dd>
+
+            <dt>body</dt>
+            <dd>Inserts predefined text into the message body.</dd>
+        </dl>
+
+    </p>
+    <p>
+        To use these fields effectively, it is also important to understand 
+        a few special characters that appear in mailto: links:
+
+        <dl style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;">
+            <dt>?</dt>
+            <dd>
+                Begins the list of email parameters. 
+                It is placed immediately after the email address.
+                <br>
+            </dd>
+
+            <dt>&</dt>
+            <dd>Separates multiple parameters.</dd>
+            <br>
+
+            <dt>%20</dt>
+            <dd>
+                Represents a space in a URL. 
+                Since spaces are not allowed directly in URLs,
+                 %20 is used instead.
+                 <br>
+            </dd>
+
+            <dt>%0D%0A</dt>
+            <dd>Represents a new line (line break) in the email body. 
+                This allows you to format longer messages with multiple lines.
+                <br>
+            </dd>
+        </dl>
+    </p>
+
+    <div style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+        <a href="mailto:support@example.com?cc=test@example.com,user@example.com,test@example.com&bcc=Abbas.Kargozar@example.com&subject=Test%20all%20Options%20for%20mailto&body=Hi%0D%0A%20new%20line">Prefill email ;&rpar; </a>
+    </div>
+
+    <p>
+        <em>Note:</em> Publishing an email address directly inside an 
+        &lt;a href="mailto:...&gt; link makes it easier for automated  
+        to discover and collect it. Some spammers and scammers use these 
+        bots to harvest email addresses from public websites. 
+        To reduce this risk, many developers generate email links dynamically 
+        with JavaScript or use other obfuscation techniques, making it more difficult 
+        for simple harvesting bots to detect the address. Keep in mind, however, 
+        that determined crawlers may still be able to extract email addresses, 
+        so JavaScript should be viewed as a deterrent rather than a complete security 
+        solution.
+
+    </p>
+
+    <h2 id="five">5. Triggering a Phone Call</h2>
+    <p>
+        Particularly useful for mobile users, the tel: scheme allows visitors to ring a specified 
+        telephone number directly. With a single tap, the device’s dialler is activated, 
+        making it an excellent feature for business websites.
+    </p>
+    <p>For example</p>
+    <br>
+    <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+        &lt;a href="tel:+15555550199"&gt;Phone: +1-555-555-0199&lt;/a&gt;
+    </code></pre>
+    <div style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+        <a href="tel:+15555550199">Phone: +1-555-555-0199</a>
+    </div>
+        
+    <p>
+        This is a fake phone number!
+    </p>
+    
+    
+
+    <h2 id="six">6. Downloading Files</h2>
+    <p>
+      If you want to offer a document, such as a PDF or an image, for the user to save locally, 
+      you can easily do so. Simply include the download attribute alongside the file’s path in 
+      the href, which instructs the browser to download the file rather than navigating to it.  
+    </p>
+    <p>for <em>local file:</em></p>
+    <pre style="background-color: gainsboro; width: 960px; margin: 0 auto; padding:10px;"><code>
+        &lt;a href = "Local url or directory/file.name"&gt; Download Link &lt;/a&gt;
+    </code></pre>
+    <br><br>
+    <div style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">
+        <a href="README.md" download="You can write anything here.md">Download</a>
+    </div>
+    <br><br>
+    <p>
+        Keep in mind that the "download" attribute is generally intended for files 
+        hosted on the same origin as your website. It cannot reliably force the download 
+        of files from external websites using HTML alone. Most browsers ignore the "download" 
+        attribute for cross-origin resources unless the remote server explicitly allows it 
+        through the appropriate HTTP headers. If you need to provide downloadable files from 
+        another domain, the server hosting the file must be configured to support downloads, 
+        or you must serve the file through your own backend or another trusted source under your control.
+</p>
+    
+    
+
+    
+    <br><br>
+    <a href="#" style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">^Go to top ^</a>
+</body>
+</html>
