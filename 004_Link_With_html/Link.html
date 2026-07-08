@@ -46,6 +46,7 @@
                 &lt;li&gt;&lt;a href="https://google.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="https://youtube.com"&gt;open Youtube&lt;/a&gt;&lt;/li&gt;
                 &lt;li&gt;&lt;a href="https://www.w3schools.com"&gt;open W3Schools&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="ftp://example.com"&gt;open ftp example.com&lt;/a&gt;&lt;/li&gt;
                             &lt;!-- look at some wrong example below.--&gt;
                 &lt;li&gt;&lt;a href="google.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;                
                 &lt;li&gt;&lt;a href="www.w3schools.com"&gt;open Google&lt;/a&gt;&lt;/li&gt;
@@ -57,14 +58,15 @@
             <li><a href="https://google.com">open google</a></li>
             <li><a href="https://youtube.com">open youtube</a></li>
             <li><a href="https://www.w3schools.com/">open w3shool</a></li>
-
+            <li><a href="ftp://example.com/">open ftp example.com</a></li>
             <li><a href="google.com"> Wrong: google</a></li>
             <li><a href="www.w3schools.com/">Wrong: w3shool</a></li>
         </ul>
     </p>
 
     <p>
-        
+        Both http:// and ftp:// are valid in href, but ftp:// may not work in most modern browsers,
+         and http:// may show a security warning if the site doesn't support HTTPS.
     </p>
     <h2 id="two">2. Opening Links in a New Tab</h2>
     <p>
