@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MultiMedia</title>
+        <style>
+            body{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>How to Manipulate Multimedia in HTML</h1>
+        <p>
+            To work with multimedia in HTML, you only need four elements:
+            <pre><code>
+                &lt;img&gt;
+                &lt;picture&gt;
+                &lt;video&gt;
+                &lt;audio&gt;
+            </code></pre>
+   
+
+            Simply provide the path to your file, and the browser will display it. While CSS and JavaScript can improve the appearance, performance, and functionality of multimedia, HTML itself also offers a variety of useful attributes that let you control how these elements behave.
+
+            In the following sections, we'll look at the most important attributes and the best practices you should follow when using each of these multimedia elements.
+        </p>
+
+        <h2>Displaying Images</h2>
+        <p>
+            To do this in HTML, we have two tags at our disposal: &lt;img&gt; and &lt;picture&gt;.
+            To use these tags properly, you must be familiar with the following attributes:
+            <ul>
+                <li><a href="#src">src</a></li>
+                <li><a href="#hw">height & width</a></li>
+                <li><a href="#alt">alt</a></li>
+                <li><a href="#load">loading</a></li>
+                <li><a href="#type">type</a></li>
+                <li><a href="#decode">decoding="async"</a></li>
+                <li><a href="#srcset">srcset</a></li>
+
+            </ul>
+
+        </p>
+
+        <h2>Simple photo</h2>
+        <p>
+            The most simple way to show a picture is :
+            <pre><code>
+                &lt;img src="your/picture/path or  url" &gt;
+            </code></pre>
+        </p>
+        <img src="./photo/sample_photo_01.png">
+
+        <p>
+            As you see, the picture above this text isn't pleasant.
+             I'm not referring to the absence of CSS. You may notice 
+             the enormous size of the picture. To avoid this, you 
+             should've used the "width" and height "attributes". These attributes 
+             also prevent CLS and are good for SEO.
+        </p>
+        <pre><code>
+            &lt;img src="./photo/sample_photo_01.png" width="650px" height="400px"&gt;
+        </code></pre>
+
+            <img src="./photo/sample_photo_01.png" width="650px" height="400px">
+
+        <p>
+            Other things that help your SEO and help blind people are the 
+            "alt" attribute. When your photo isn't available, it shows the 
+            alt text that you've written. And page scanners read the alt text 
+            instead of the photo's name, which might be annoying for blind people.
+        </p>
+        <pre><code>
+            &lt;img src="./photo/Not_Exist.png" width="650px" height="400px" alt="desktop photo"&gt;
+        </code></pre><br> 
+        
+        <img src="./photo/Not_Exist.png" width="650px" height="400px" alt="desktop photo">
+        
+        <pre><code>
+            &lt;img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo"&gt;
+        </code></pre><br>
+
+        <img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo">
+        <br><br>
+
+        <p>
+            Do you want your page to load faster? One of the tricks related to this 
+            topic is using the "loading" attribute. By setting it to "loading=lazy", 
+            your page will load faster. But be aware: you should only use it for images 
+            that are at the bottom of the page and not yet visible to the user when the 
+            page first loads.
+        </p>
+
+
+        <pre><code>
+            &lt;img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo"&gt;
+        </code></pre><br>
+
+        <img src="./photo/sample_photo_01.png" width="650px" height="400px" alt="desktop photo" loading="lazy">
+        <br><br>
+        <p>
+            Another answer to this question is using decoding="async". 
+            By doing this, you're telling the browser to interpret all 
+            of the code except this image, and after everything else, 
+            come back and interpret this one. This technique can be used for 
+            any image, but it's especially beneficial for images that are not 
+            in the initial viewport.
+        </p>
+
+        <pre><code>
+            &lt;img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo" decoding="async"&gt;
+        </code></pre><br>
+
+        <img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo" loading="lazy" decoding="async">
+        <br><br>
+
+        
+    </body>
+</html>
