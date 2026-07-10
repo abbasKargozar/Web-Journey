@@ -118,6 +118,45 @@
         <img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo" loading="lazy" decoding="async">
         <br><br>
 
-        
+        <p>
+            How can upload image responsivly?
+            for this matter you can use to helpful attributes.
+            use "srset" to give your difrent options to browser.
+            use "sizes" (max-width=) 100vw 50vw
+            <dl>
+                <dt>srcset</dt>
+                <dd>
+                    The srcset attribute provides the browser with 
+                    a list of available image files and their exact 
+                    pixel widths, allowing it to automatically select 
+                    and download the most optimal image for the user’s device.
+                </dd>
+
+                <dt>sizes</dt>
+                <dd>
+                    The sizes attribute specifies how much screen space 
+                    an image will occupy at various viewport widths, enabling 
+                    the browser to choose the most appropriate image from the 
+                    srcset before the CSS has loaded.
+                </dd>
+            </dl>
+            <p>
+                for example:
+            </p>
+            <pre><code>
+                &lt;img src="./photo/sample_photo_01.webp" 
+                 srcset="./photo/small_sample_photo_01.jpg 400w, ./photo/medium_sample_photo_01.jpg 800w"
+                 sizes="(max-width:600px) 100vw, 50vw"
+                 alt="code photo"
+            &gt;
+            </code></pre>
+
+            <img src="./photo/sample_photo_01.webp" 
+                 srcset="./photo/small_sample_photo_01.jpg 400w, ./photo/medium_sample_photo_01.jpg 800w"
+                 sizes="(max-width:600px) 100vw, 50vw"
+                 alt="code photo"
+            >
+
+        </p>
     </body>
 </html>
