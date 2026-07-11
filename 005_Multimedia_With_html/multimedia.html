@@ -18,7 +18,6 @@
             To work with multimedia in HTML, you only need four elements:
             <pre><code>
                 &lt;img&gt;
-                &lt;picture&gt;
                 &lt;video&gt;
                 &lt;audio&gt;
             </code></pre>
@@ -29,7 +28,32 @@
             In the following sections, we'll look at the most important attributes and the best practices you should follow when using each of these multimedia elements.
         </p>
 
-        <h2>Displaying Images</h2>
+        <ul>
+            <li><a href="#image">1.Displaying Images</a>
+                <ul>
+                    <li><a href="#subimage-one">1.1.Simple photo</a></li>
+                    <li><a href="#subimage-two">1.2.Picture and SEO</a>
+                        <ul>
+                            <li><a href="#subsubimage-one">1.2.1.Lazy Loading</a></li>
+                            <li><a href="#subsubimage-two">1.2.2.Decoding</a></li>
+                            <li><a href="#subsubimage-three">1.2.3.Picture Menu</a></li>
+                            <li><a href="#subsubimage-four">1.2.4.Another Menu</a></li>
+
+                        
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#video">Video in html</a>
+                <ul>
+                    <li><a href="#subvideo-one">Video and SEO</a></li>
+                </ul>
+            </li>
+            <li><a href="#audio">Audio in html</a></li>
+        </ul>
+
+        <h2 id="image">1.Displaying Images</h2>
         <p>
             To do this in HTML, we have two tags at our disposal: &lt;img&gt; and &lt;picture&gt;.
             To use these tags properly, you must be familiar with the following attributes:
@@ -46,7 +70,7 @@
 
         </p>
 
-        <h2>Simple photo</h2>
+        <h3 id="subimage-one">Simple photo</h2>
         <p>
             The most simple way to show a picture is :
             <pre><code>
@@ -86,7 +110,8 @@
 
         <img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo">
         <br><br>
-
+        <h3 id="subimage-two">Picture and SEO</h3>
+        <h4 id="subsubimage-one">Lazy Loading</h4>
         <p>
             Do you want your page to load faster? One of the tricks related to this 
             topic is using the "loading" attribute. By setting it to "loading=lazy", 
@@ -102,6 +127,7 @@
 
         <img src="./photo/sample_photo_01.png" width="650px" height="400px" alt="desktop photo" loading="lazy">
         <br><br>
+        <h4 id="subsubimage-two">Decoding</h4>
         <p>
             Another answer to this question is using decoding="async". 
             By doing this, you're telling the browser to interpret all 
@@ -117,7 +143,7 @@
 
         <img src="./photo/sample_photo_02.png" width="650px" height="400px" alt="desktop photo" loading="lazy" decoding="async">
         <br><br>
-
+        <h4 id="subsubimage-three">Picture Menu</h4>
         <p>
             How can upload image responsivly?
             for this matter you can use to helpful attributes.
@@ -151,12 +177,222 @@
             &gt;
             </code></pre>
 
+
             <img src="./photo/sample_photo_01.webp" 
                  srcset="./photo/small_sample_photo_01.jpg 400w, ./photo/medium_sample_photo_01.jpg 800w"
                  sizes="(max-width:600px) 100vw, 50vw"
                  alt="code photo"
             >
+            <p>
+                Here, sizes="(max-width:600px) 100vw, 50vw" means:
+                 100vw sets the picture width to 100% if the screen is
+                  less than max-width (600px), and 50vw sets the picture 
+                  width to 50% if the screen is greater than max-width (600px).
+            </p>
+            <h4 id="subsubimage-four">Another menu</h4>
+            <p>
+               Sometimes you want your browser to choose a different image. 
+               You don't want to serve a high-resolution image to a mobile 
+               screen and trick the browser into loading unnecessary data. 
+               Sometimes you have different formats to show. You say, 
+               "Dear browser, look here! You can choose from .jpg, .webp, 
+               .avif, or other formats."
+            </p>
+            <p>
+                To do that, you can simply use &lt;picture&gt; &lt;/picture&gt;, 
+                &lt;source&gt;, and &lt;img&gt;. When browsers see this structure, 
+                they probably say, "So &lt;picture&gt; is our menu – let's have a look!" 
+                They look at the different &lt;source&gt; options and finally the Chef's 
+                Recommendation: &lt;img&gt;. In &lt;img&gt;, you can also put your other 
+                settings, and these attributes are like side dishes which you prefer for 
+                all your items in the menu.
+            </p><br>
 
+            <pre><code>
+                &gt;picture&lt;
+                    &lt;source type="image/png" srcset="./photo/sample_photo_01.png"&gt;
+                    &lt;source type="image/webp" srcset="./photo/sample_photo_01.webp"&gt;
+                    &lt;source type="image/svg" srcset="./photo/sample_photo_01.svg"&gt;
+                    &lt;img src="./photo/sample_photo_01.jpg" alt="source tag usage"
+                        width="700px" height="450px" loading="lazy" decoding="async"
+                        &gt;
+            </picture>
+
+            </code></pre><br>
+
+            <picture>
+                <source type="image/png" srcset="./photo/sample_photo_01.png">
+                <source type="image/webp" srcset="./photo/sample_photo_01.webp">
+                <source type="image/svg" srcset="./photo/sample_photo_01.svg">
+                <img src="./photo/sample_photo_01.jpg" alt="source tag usage"
+                        width="700px" height="450px" loading="lazy" decoding="async"
+                    >
+            </picture><br><br><br>
+
+
+            <h2 id="video">Videos in html</h2>
+
+            <p> 
+                when you have one video file the simple way is to use &lt;video src="path
+                /to/your/file or url"&gt;&lt;/video&gt; and atleast "controls attribute"like: 
+            </p>
+            <pre><code>
+                       &lt;video src="./video/sample_video_one.webm" controls&gt;&lt;/video&gt;
+            </code></pre>
+
+            <video src="./video/sample_video_one.webm" controls></video>
+
+            <p>
+                Just like image, we have difrent types of attributes: 
+                <dl>
+                                        
+                    <dt>width & height</dt>
+                    <dd>
+                        Set the width and height of the video
+                    </dd>
+
+                    <dt>controls</dt>
+                    <dd>
+                        Shows playback controls (play, pause, volume, 
+                        and fullscreen) to the user
+                    </dd>
+
+                    <dt>autoplay</dt>
+                    <dd>
+                        Plays the video immediately after page load 
+                        (in most modern browsers, this only works if 
+                        the muted attribute is also present)
+                    </dd>
+
+                    <dt>muted</dt>
+                    <dd>Mutes the video audio</dd>
+
+                    <dt>loop</dt>
+                    <dd>
+                        Replays the video from the beginning when it ends
+                    </dd>
+
+                    <dt>poster</dt>
+                    <dd>
+                        Specifies an image URL to show as a thumbnail before 
+                        the video starts playing. Example: poster="image.jpg"
+                    </dd>
+                </dl>
+            </p>
+
+            <br><br>
+
+            <pre><code>
+                &lt;video controls muted width="700" height="450" poster="./photo/poster_01.png"&gt;
+                    &lt;source type="video/webm" src="./video/sample_video_one.webm"&gt;
+                    .
+                    .
+                    .
+                     &lt;source type="video/mp4" src="./video/sample_video_one.mp4"&gt;
+                    your browser dosen't support
+                &lt;/video&gt;
+            </code></pre>
+
+            <video controls muted width="700" height="450" poster="./photo/poster_01.png">
+                <source type="video/webm" src="./video/sample_video_one.webm">
+                <source type="video/mp4" src="./video/sample_video_one.mp4">
+                your browser dosen't support
+            </video>
+
+        <br><br>
+
+        <h3 id="subvideo-one">Video and SEO</h3>
+            <p>
+                If you want your page to load faster, you can use the preload attribute. 
+                It tells the browser to first interpret the page and then come back for 
+                the video files.
+                By using the preload attribute, you have two options:
+                <dl>
+                    <dt><b>preload="none"</b></dt>
+                    <dd>
+                        it waits for the user to press the play button, 
+                        and then the browser looks for metadata and other information.
+                    </dd>
+
+                    <dt><b>preload="metadata"</b></dt>
+                    <dd>
+                        with this, the user can see the video time and video size, 
+                        and it is the best option to choose.
+                    </dd>
+                </dl>
+            </p>
+
+            <h3 id="subvideo-two"></h3>
+            <p>
+                To add subtitles or captions to videos (and sometimes audio files), 
+                the &lt;track&gt; tag is used inside the &lt;video&gt; element. 
+                The standard and common format for subtitle files on the web is WebVTT 
+                (with the .vtt extension). The &lt;track&gt; tag must always be placed inside the 
+                &lt;video&gt; or &lt;audio&gt; element, and after the &lt;source&gt; tags.
+            </p>
+
+            <p>
+                The most important attributes are:
+
+                <dl>
+                    <dt><b>src</b></dt>
+                    <dd>
+                        For example: path/to/subtitle_file 
+                    </dd>
+
+                    <dt><b>kind</b></dt>
+                    <dd>
+                        Defines the type of text track. 
+                        Common values include subtitles, captions, chapters
+                    </dd>
+
+                    <dt><b>srclang</b></dt>
+                    <dd>Specifies the language of the subtitle file using a language code</dd>
+
+                    <dt><b>label</b></dt>
+                    <dd>Specifies the language of the subtitle file using a language code</dd>
+
+                    <dt><b>default</b></dt>
+                    <dd>
+                        ndicates that this text track should be enabled by default when the video 
+                        loads. Only one &lt;track&gt; element can have the default attribute.
+                    </dd>
+
+                </dl>
+
+                <p>Example:</p>
+                <pre><code>
+
+                </code></pre>
+
+                <video muted controls poster="./photo/poster_01.png" width="700" height="400" preload="metadata">
+                    <source type="video/mp4" src="./video/sample_video_one.mp4">
+                    <source type="video/webm" src="./video/sample_video_one.webm">
+
+                    <track src="./files/subtitle.vtt" kind="subtitles"  srclang="en" label="Subtitle One"  default >
+                    <track src="./files/subtitle_02.vtt" kind="subtitles" srclang="en" label="Subtitle Two">
+                    
+                </video>
+
+            </p>
+
+        <h2 id="audio">Audio in html</h2>
+        <p>
+            The last and easiest section is loading an audio file in HTML. 
+            Since we have already covered all the required attributes in the 
+            video section, here we will finish with just an example.
         </p>
+
+        <pre><code>
+            &lt;audio src="./audio/sample_audio.mp3" controls preload="metadata"&gt;&lt;/audio&gt;
+        </code></pre>
+
+        <audio src="./audio/sample_audio.mp3"  controls preload="metadata"></audio>
+
+        <p>you can also use autoplay, muted and loop</p>
+
+
+
     </body>
+
 </html>
