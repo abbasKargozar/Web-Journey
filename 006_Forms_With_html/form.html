@@ -10,6 +10,10 @@
             flex-direction: column;
             align-items: center;
         }
+        dl> dt{
+            font-size: larger;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -125,7 +129,7 @@
                     tag visible is input. 
                 </p>
                 <p>
-                    
+
                 </p>
 
                 <p>
@@ -141,6 +145,60 @@
                 <form action="#" method="dialog" target="_blank" autocomplete="on" >
                     <input type="text">
                 </form>
+
+                <p>
+                    As you saw in the previous example, the &lt;input&gt; element includes several attributes.
+                    But is that all? And what exactly does type="text" mean?
+                    Check out the following list and examples to learn more about the
+                    different attributes of the &lt;input&gt; element and how they work.
+                </p>
+
+                <dl>
+                    <dt>type</dt>
+                    <dd>Specifies what type of data the user is expected to enter into the form field.</dd>
+                    
+                    <dt>id</dt>
+                    <dd>
+                        The id attribute assigns a unique identifier to an &lt;input&gt; element. HTML, CSS, and 
+                        JavaScript can use this identifier to reference the element.
+                    </dd>
+
+                    <dt>name</dt>
+                    <dd>
+                        While id is commonly used to identify an element on the front end, the name attribute is 
+                        used by backend languages such as PHP to identify the submitted form data.
+                    </dd>
+
+                    <dt>value</dt>
+                    <dd>
+                        The value attribute sets the initial value of an input field. It is especially useful when 
+                        users are editing existing information, such as updating their profile.
+                    </dd>
+                    
+                    <dt>placeholder</dt>
+                    <dd>
+                        The placeholder attribute is used to display a hint or an example inside an 
+                        input field. It's especially helpful when users need guidance on the expected 
+                        format. For example, when entering a phone number, seeing a placeholder like 
+                        +98... makes it immediately clear which format should be used.
+                    </dd>
+                    
+                    <dt>autofocus</dt>
+                    <dd>
+                        Let me explain it with an example. Have you ever noticed that when you open Google, 
+                        the cursor is automatically placed in the search box? That's exactly what the autofocus 
+                        attribute does.
+                    </dd>
+
+                    <dd>
+                        So, where is it useful? Personally, I like to place the cursor in the email field 
+                        as soon as the sign-up page loads, allowing users to start typing immediately 
+                        without making an extra click.
+                    </dd>
+
+
+
+                </dl>
             <h3 id="#label">2.2.label</h3>
                 <p>
                     As you may have noticed in the example above, the form feels somewhat 
