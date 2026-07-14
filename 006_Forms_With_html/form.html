@@ -14,6 +14,7 @@
             font-size: larger;
             font-weight: 700;
         }
+
     </style>
 </head>
 <body>
@@ -154,36 +155,119 @@
                 </p>
 
                 <dl>
-                    <dt>type</dt>
+                    <dt>1.type</dt>
                     <dd>Specifies what type of data the user is expected to enter into the form field.</dd>
-                    
-                    <dt>id</dt>
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="test-01"&gt;password&lt;/label&gt;
+                                &lt;input type="password" id="test-01"&gt;
+                            &lt;/form&gt;    
+                        </code></pre>
+                    </dd>
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="test-01">password</label>
+                            <input type="password" id="test-01">
+                        </form>
+                    </dd>
+                    <br>
+                    <dt>2.id</dt>
                     <dd>
                         The id attribute assigns a unique identifier to an &lt;input&gt; element. HTML, CSS, and 
-                        JavaScript can use this identifier to reference the element.
+                        JavaScript can use this identifier to reference the element. for example: .
                     </dd>
 
-                    <dt>name</dt>
+                    <dd>
+                        <pre><code>
+                            &lt;style&gt;
+                                #test-id-name{background-color: orangered;}
+                                #test-id-age{background-color: orange;}
+                            &lt;/style&gt;                            
+
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="test-id-name"&gt;Name: &lt;/label&gt;
+                                &lt;input type="text" id="test-id-name"&gt;
+                            
+                                &lt;label for="test-id-age"&gt;Age&lt;/label&gt;
+                                &lt;input type="number" type="test-id-age"&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <style>
+                            #test-id-name{background-color: orangered;}
+                            #test-id-age{background-color: orange;}
+                        </style>          
+
+                        <form action="#" method="dialog">
+                            <label for="test-id-name">Name: </label>
+                            <input type="text" id="test-id-name">
+                            
+                            <label for="test-id-age">Age</label>
+                            <input type="number" id="test-id-age">
+                        </form>
+                    </dd>
+                    <br>
+                    <dd>
+                        As you saw in the example above, we used the id attribute to reference the input 
+                        elements from both HTML and CSS.
+                    </dd>
+
+                    <dt>3.name</dt>
                     <dd>
                         While id is commonly used to identify an element on the front end, the name attribute is 
                         used by backend languages such as PHP to identify the submitted form data.
                     </dd>
 
-                    <dt>value</dt>
+                    <dt>4.value</dt>
                     <dd>
                         The value attribute sets the initial value of an input field. It is especially useful when 
                         users are editing existing information, such as updating their profile.
                     </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog" &gt;
+                                &lt;label for="id-value"&gt;E-mail: &lt;/label&gt;
+                                &lt;input type="email" id="id-value" value="example@email.com" &gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog" >
+                            <label for="id-value">E-mail: </label>
+                            <input type="email" id="id-value" value="example@email.com" >
+                        </form>
+                    </dd>
                     
-                    <dt>placeholder</dt>
+                    <dt>5.placeholder</dt>
                     <dd>
                         The placeholder attribute is used to display a hint or an example inside an 
                         input field. It's especially helpful when users need guidance on the expected 
                         format. For example, when entering a phone number, seeing a placeholder like 
                         +98... makes it immediately clear which format should be used.
                     </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-placeholder"&gt;Phone Numbre: &lt;/label&gt;
+                                &lt;input type="tel" id="id-placeholder" placeholder="+15555550199"&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-placeholder">Phone Numbre: </label>
+                            <input type="tel" id="id-placeholder" placeholder="+15555550199">
+                        </form>
+                    </dd>
                     
-                    <dt>autofocus</dt>
+                    <dt>6.autofocus</dt>
                     <dd>
                         Let me explain it with an example. Have you ever noticed that when you open Google, 
                         the cursor is automatically placed in the search box? That's exactly what the autofocus 
@@ -196,7 +280,209 @@
                         without making an extra click.
                     </dd>
 
+                    <dd>
+                        <pre id="code-above"><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-autofocus"&gt;Search: &lt;/label&gt;
+                                &lt;input type="search" id="id-autofocus" autofocus&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
 
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-autofocus">Search: </label>
+                            <input type="search" id="id-autofocus">
+                            <label for="simulate">prss to see how autofocus works</label>
+                            <button id="simulate" onclick="document.getElementById('id-autofocus').focus()">
+                                click
+                            </button>
+                        </form>
+                    </dd>
+                    <br>
+                    <dd>
+                        In this example, to avoid the page jumping to the middle of the content 
+                        caused by the autofocus attribute, we utilized JavaScript for simulation.
+                        If you implement the code you see <a href="#code-above">above</a>, everything will be performed automatically.
+                    </dd>
+
+                    <dt>7.disabled</dt>
+                    <dd>
+                        The disabled attribute disables an input field, preventing users from clicking 
+                        on it, typing into it, or submitting its value with the form.
+                        However, it does not hide the element. The input remains visible, but users cannot 
+                        interact with it.
+                    </dd>
+                    <dd>
+                        When is it useful?
+                        Have you ever visited a website where you must first accept the terms and 
+                        conditions before the other buttons or input fields become available? That's a 
+                        common use case for the disabled attribute.
+                        In real-world applications, this behavior is usually controlled with a bit of 
+                        JavaScript, which enables or disables form elements based on the user's actions.
+                    </dd>
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-disabled-user"&gt;User Name: &lt;/label&gt;
+                                &lt;input type="text" id="id-disabled-user" disabled&gt;
+
+                                &lt;label for="id-disabled-email"&gt;E-mail: &lt;/label&gt;
+                                &lt;input type="email" id="id-disabled-email" disabled&gt;
+
+                                &lt;label&gt;
+                                    &lt;input type="checkbox" onchange=
+                                    "document.getElementById('id-disabled-user').disabled = !this.checked;
+                                    document.getElementById('id-disabled-email').disabled = !this.checked;
+                                    "&gt;
+                                    I accept rules and conditions.
+                                &lt;/label&gt;
+                            </form>
+                        </code></pre>
+                    </dd>
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-disabled-user">User Name: </label>
+                            <input type="text" id="id-disabled-user" disabled>
+
+                            <label for="id-disabled-email">E-mail: </label>
+                            <input type="email" id="id-disabled-email" disabled>
+
+                            <label>
+                                <input type="checkbox" onchange=
+                                "document.getElementById('id-disabled-user').disabled = !this.checked;
+                                document.getElementById('id-disabled-email').disabled = !this.checked;
+                                ">
+                                I accept rules and conditions.
+
+                            </label>
+                        </form>
+                    </dd>
+
+
+                    <dt>8.readonly</dt>
+                    <dd>
+                        The readonly attribute allows users to view and copy the text, 
+                        but they cannot modify its value.
+                    </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-read-only"&gt;Your Tracking Code&lt;/label&gt;
+                                &lt;input type="number" id="id-read-only" value="123456789" readonly&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-read-only">Your Tracking Code</label>
+                            <input type="number" id="id-read-only" value="123456789" readonly>
+                        </form>
+                    </dd>
+
+                    <dt>9.autocomplete</dt>
+                    <dd>
+                        The autocomplete attribute in HTML &lt;form&gt; or &lt;input&gt; elements 
+                        specifies whether the browser should automatically complete form fields based 
+                        on the user's previous inputs.
+                    </dd>
+                    <dd>
+                        It accepts values like on (enabled), off (disabled), or specific types such
+                        as name, email, address, etc., improving user experience by making form filling
+                        faster and more accurate.
+                    </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-autocomplete"&gt;Search bar: &lt;/label&gt;
+                                &lt;input type="search" id="id-autocomplete" autocomplete="on" placeholder="type to find ..."&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-autocomplete">Search bar: </label>
+                            <input type="search" id="id-autocomplete" autocomplete="on" placeholder="type to find ...">
+                        </form>
+                    </dd>
+                    
+                    <dt>10.required</dt>
+                    <dd>
+                        If the field is empty, the browser prevents submission and shows a validation 
+                        message, ensuring essential data is provided by the user.
+                    </dd>
+                    <dt>11.maxlength & minlength</dt>
+                    <dd>
+                        maxlength limits the maximum characters allowed, 
+                        while minlength sets the minimum characters required in form inputs.
+                    </dd>
+
+                    <dt>12.max & min</dt>
+                    <dd>
+                        max sets the maximum value (for numbers, dates, etc.), 
+                        while min defines the minimum acceptable value in form inputs.
+                    </dd>
+
+                    <dt>13.pattern</dt>
+                    <dd>
+                        pattern attribute uses a regular expression (regex) to validate the format of 
+                        user input (e.g., email, phone, or custom rules) in form fields.
+                    </dd>
+
+                    <dt>14.accept</dt>
+                    <dd>
+                        The accept attribute lets you specify which types of files users are allowed to select.
+                        Have you ever noticed that when you're uploading a photo on a website, 
+                        your folder may contain many different file types, but only the images are shown? 
+                        That's exactly what the accept attribute does—it filters the file picker to display 
+                        only the allowed file types.
+                    </dd>
+
+                    <dt>15.multiple</dt>
+                    <dd>
+                        The multiple attribute allows users to select multiple files at the same time or 
+                        enter multiple email addresses in a single input field.
+                    </dd>
+
+                    <dt>16.step</dt>
+                    <dd>
+                        The step attribute defines the interval between valid values for an input field.
+                        For example, imagine you're selling a product that can only be purchased in whole numbers. 
+                        In that case, you wouldn't want customers to order 1.5 items. By setting step="1", 
+                        only whole numbers are allowed.
+                        On the other hand, if you're selling a product by weight, you can use a smaller step value, 
+                        such as 0.1 or 0.5, to allow decimal quantities.
+                    </dd>
+
+                    <dt>17.input</dt>
+                    <dd>
+                        The inputmode attribute tells the browser which on-screen keyboard is most appropriate 
+                        for the input field, especially on mobile devices.
+                        For example, when you tap an email field, the keyboard often includes the @ symbol 
+                        for easier typing. Likewise, when entering a verification code, a numeric keyboard 
+                        is usually displayed. That's exactly what the inputmode attribute is designed to do.
+                    </dd>
+
+                    <dt>18.list</dt>
+                    <dd>
+                        The list attribute is used together with the &lt;datalist&gt; and &lt;option&gt; elements 
+                        to provide a list of suggested values for an input field.
+                        You've probably used this feature before. For example, when filling out a 
+                        registration form, you may start typing the name of your country and see a list 
+                        of matching suggestions appear. That's a common use case for list and &lt;datalist&gt;.
+                    </dd>
+
+                    <dt>19.form</dt>
+                    <dd>
+                        If your page layout requires an input field to be placed outside its 
+                        main &lt;form&gt; element, the form attribute lets you associate it with that form.
+                        Simply assign an id to the &lt;form&gt; element, then set the form attribute of the 
+                        external &lt;input&gt; to the same value. This links the input to the form, even though 
+                        it is located elsewhere in the document.
+                    </dd>
 
                 </dl>
             <h3 id="#label">2.2.label</h3>
