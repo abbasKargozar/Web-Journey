@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form</title>
     <style>
-        body{
+        /*body{
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
+        }*/
         dl> dt{
             font-size: larger;
             font-weight: 700;
@@ -32,7 +32,7 @@
                 <li><a href="#enctype">1.3.enctype</a></li>
                 <li><a href="#autocomplete">1.4.autocomplete</a></li>
                 <li><a href="#novalidate">1.5.novalidate</a></li>
-                <li><a href="#targe">1.6.target</a></li>
+                <li><a href="#target">1.6.target</a></li>
             </ul>
         </li>
         <li><a href="#form-label">2.Label and Input</a>
@@ -121,7 +121,7 @@
 
     <h2 id="form-label">2.Label and Input</h2>
 
-            <h3 id="#input">2.1.input</h3>
+            <h3 id="input">2.1.input</h3>
                 <p>
                     As you may have noticed, we haven't provided any examples for the backend section. 
                     Do you know why? It's because without front-end settings, the &lt;form&gt; tag doesn't 
@@ -678,7 +678,7 @@
                     </dd>
 
                 </dl>
-            <h3 id="#label">2.2.label</h3>
+            <h3 id="label">2.2.label</h3>
                 <p>
                     As you may have noticed in the example above you can use the &lt;label&gt; 
                     element to associate descriptive text with each form control. This improves 
@@ -705,11 +705,199 @@
                 </form>
 
     <h2 id="radio">Radio Buttons</h2>
-    <h2 id="checkboxes">Checkboxes</h2>
-    <h2 id="drop-down">Dropdown Lists</h2>
-    <h2 id="text-section">Comment Section</h2>
-    <h2 id="categorise">Categorise</h2>
-    <h2 id="example">Example</h2>
+            <p>
+                Radio buttons are one of the form elements in HTML that present multiple options to 
+                the user, allowing them to select only one of them. They may seem similar to checkboxes 
+                in terms of usage, but the main difference is that checkboxes allow multiple selections 
+                at the same time, whereas radio buttons allow only one selection within a group.To create 
+                a radio button, you should use type="radio" in the input tag. An important point is that:
+            </p>
+            <ul>
+                <li>
+                    The name value must be the same for all options in the same group so that the user 
+                    cannot select more than one option from that group.
+                </li>
+
+                <li>
+                    The value attribute specifies what data will be submitted with the form when 
+                    that option is selected.
+                </li>
+            </ul>
+            <p>
+                Radio buttons are commonly used for choices such as gender, marital status, 
+                and other single-selection options.See the example below.
+            </p>
+
+            <pre><code>
+                &lt;form action="#" method="dialog"&gt;
+                    &lt;label for="id-gender-m">Male&lt;/label&gt;
+                    &lt;input type="radio" name="gender" id="id-gender-m" value="male" required&gt;
+
+                    &lt;label for="id-gender-f"&gt;Female&lt;/label&gt;
+                    &lt;input type="radio" name="gender" id="id-gender-f" value="female required"&gt;
+
+                    &lt;button type="submit"&gt;send&lt;/button&gt;
+                </form>
+            </code></pre>
+
+            <form action="#" method="dialog">
+                <label for="id-gender-m">Male</label>
+                <input type="radio" name="gender" id="id-gender-m" value="male" required>
+
+                <label for="id-gender-f">Female</label>
+                <input type="radio" name="gender" id="id-gender-f" value="female required">
+
+                <button type="submit">send</button>
+            </form>
+    <h2 id="checkboxes">4.Checkboxes</h2>
+            <p>
+                Checkboxes are form elements that allow the user to make multiple selections simultaneously. 
+                Unlike radio buttons, which restrict the user to choosing only one option, checkboxes give 
+                the user the freedom to select as many as they like. They are typically used for selecting skills,  
+                interests, or accepting terms of service. 
+                Keep in mind that for this, you should use type="checkbox".
+            </p>
+            <p>
+                Each checkbox acts independently. If you want to handle a set of checkboxes as a group in the backend, 
+                you usually use a similar name (often with [] in many backend languages to receive them as an array).
+                value="" is, as before, the value sent to the server when that specific box is checked. See the example below.
+            </p>
+
+            <pre><code>
+                &lt;form action="#" method="dialog"&gt;
+                    &lt;label for="id-skill-html">html&lt;/label&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill" value="html"&gt;
+
+                    &lt;label for="id-skill-css">css&lt;/label&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill-css" value="css"&gt;
+
+                    &lt;label for="id-skill-JavaScript">JavaScript&lt;/label&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill-JavaScript" value="JS"&gt;
+
+                    &lt;label for="id-skill-SQL">SQL&lt;/label&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill-SQL" value="SQL"&gt;
+
+                    &lt;label for="id-skill-php">php&lt;/label&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill" value="php"&gt;
+
+                    &lt;button type="submit">Send&lt;/button&gt;
+                &lt;/form&gt;
+            </code></pre>
+
+            <form action="#" method="dialog">
+                <label for="id-skill-html">html</label>
+                <input type="checkbox" name="skill[]" id="id-skill" value="html">
+
+                <label for="id-skill-css">css</label>
+                <input type="checkbox" name="skill[]" id="id-skill-css" value="css">
+
+                <label for="id-skill-JavaScript">JavaScript</label>
+                <input type="checkbox" name="skill[]" id="id-skill-JavaScript" value="JS">
+
+                <label for="id-skill-SQL">SQL</label>
+                <input type="checkbox" name="skill[]" id="id-skill-SQL" value="SQL">
+
+                <label for="id-skill-php">php</label>
+                <input type="checkbox" name="skill[]" id="id-skill" value="php">
+
+                <button type="submit">Send</button>
+            </form>
+    <h2 id="drop-down">5.Dropdown Lists</h2>
+            <p>
+                Dropdown menus are perfect when you have many options and don’t want to clutter the page with 
+                long rows of radio buttons or checkboxes. They allow the user to select one (or sometimes multiple) 
+                options from a collapsible list. They are commonly used for selecting cities, years of birth, 
+                or product categories. Keep in mind that to create this list, you use two main tags:
+            </p>
+
+            <ul>
+                <li>
+                    The &lt;select&gt; tag, which acts as the main container (and where you define the name attribute).
+                </li>
+
+                <li>
+                    The &lt;option&gt; tag, which represents each item within the list.
+                </li>
+            </ul>
+                            
+            <p>
+                value="" is placed inside each &lt;option&gt; tag and determines what value 
+                is sent to the backend if that option is selected.See the example below.
+            </p>
+
+            <p>
+                Example No.1:
+            </p>
+
+            <pre><code>
+                &lt;form action="#" method="dialog"&gt;
+                    &lt;label for="id-color"&gt;Select your favorit color&lt;/label&gt;
+                    &lt;select name="color" id="id-color"&gt;
+                        &lt;option value="disabled selected">Choose&lt;/option&gt;
+                        &lt;option value="red">Red&lt;/option&gt;
+                        &lt;option value="green">Green&lt;/option&gt;
+                        &lt;option value="blue">Blue&lt;/option&gt;
+                    &lt;/select&gt;
+
+                    &lt;button type="submit"&gt;Send&lt;/button&gt;
+
+                &lt;/form>
+            </code></pre>
+
+            <form action="#" method="dialog">
+                    <label for="id-color">Select your favorit color</label>
+                    <select name="color" id="id-color">
+                        <option value="disabled selected">Choose</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="blue">Blue</option>
+                    </select>
+
+                    <button type="submit">Send</button>
+
+            </form>
+
+            <p>Example No.2: </p>
+
+            <pre><code>
+                &lt;form action="#" method="dialog"&gt;
+                    &lt;label for="id-car"&gt;Choose Your Favorit Cars:&lt;/label&gt;
+                    &lt;select name="car[]" id="id-car" multiple&gt;
+                        &lt;option value="Dodge Challenger"&gt;Dodge Challenger&lt;/option&gt;
+                        &lt;option value="Bentley Batur"&gt;Bentley Batur&lt;/option&gt;
+                        &lt;option value="Ford GT"&gt;Ford GT&lt;/option&gt;
+                        &lt;option value="Ford Mustang"&gt;Ford Mustang &lt;/option&gt;
+                        &lt;option value="Alpine A110"&gt;Alpine A110&lt;/option&gt;
+                        &lt;option value="Mini Cooper"&gt;Mini Cooper&lt;/option&gt;
+                        &lt;option value="Lamborghini Countach LPI 800-4"&gt;Lamborghini Countach LPI 800-4&lt;/option&gt;
+                        &lt;option value="Porsche 911"&gt;Porsche 911&lt;/option&gt;
+                        &lt;option value="Toyota Camry"&gt;Toyota Camry&lt;/option&gt;
+                        &lt;option value="Fiat 500"&gt;Fiat 500&lt;/option&gt;
+                    &lt;/select&gt;
+                &lt;/form&gt;
+            </code></pre>
+
+            <form action="#" method="dialog">
+                <label for="id-car">Choose Your Favorit Cars:</label>
+                <select name="car[]" id="id-car" multiple>
+                    <option value="Dodge Challenger">Dodge Challenger</option>
+                    <option value="Bentley Batur">Bentley Batur</option>
+                    <option value="Ford GT">Ford GT</option>
+                    <option value="Ford Mustang">Ford Mustang </option>
+                    <option value="Alpine A110">Alpine A110</option>
+                    <option value="Mini Cooper">Mini Cooper</option>
+                    <option value="Lamborghini Countach LPI 800-4">Lamborghini Countach LPI 800-4</option>
+                    <option value="Porsche 911">Porsche 911</option>
+                    <option value="Toyota Camry">Toyota Camry</option>
+                    <option value="Fiat 500">Fiat 500</option>
+                </select>
+            </form>
+
+    <h2 id="text-section">6.Comment Section</h2>
+
+    
+    <h2 id="categorise">7.Categorise</h2>
+    <h2 id="example">8.Example</h2>
 
 </body>
 </html>
