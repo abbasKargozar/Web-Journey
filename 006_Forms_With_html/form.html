@@ -414,10 +414,72 @@
                         If the field is empty, the browser prevents submission and shows a validation 
                         message, ensuring essential data is provided by the user.
                     </dd>
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-required"&gt;emali: &lt;/label&gt;
+                                &lt;input type="email" id="id-required" required&gt;
+
+                                &lt;label for="id-required-pass"&gt;password: &lt;/label&gt;
+                                &lt;input type="password" id="id-required-pass" required&gt;
+
+                                &lt;label for="id-required-check"&gt;accept rules and conditions&lt;/label&gt;
+                                &lt;input type="checkbox" required&gt;
+
+                                &lt;button type="submit"&gt;login&lt;/button&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-required">emali: </label>
+                            <input type="email" id="id-required" required>
+
+                            <label for="id-required-pass">password: </label>
+                            <input type="password" id="id-required-pass" required>
+
+                            <label for="id-required-check">accept rules and conditions</label>
+                            <input type="checkbox" required>
+
+                            <button type="submit">login</button>
+                        </form>
+                    </dd>
+
+
+
                     <dt>11.maxlength & minlength</dt>
                     <dd>
                         maxlength limits the maximum characters allowed, 
                         while minlength sets the minimum characters required in form inputs.
+                    </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-max-min"&gt;Choose a passcode&lt;/label&gt;
+                                &lt;input type="password" name="We dont have backend" id="id-max-min"
+                                        minlength="8" maxlength="40" required placeholder="like: co^v*lM09k..."
+                                &gt;
+
+                                &lt;button type="submit"&gt;
+                                    Create
+                                &lt;/button&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-max-min">Choose a passcode</label>
+                            <input type="password" name="We dont have backend" id="id-max-min"
+                                    minlength="8" maxlength="40" required placeholder="like: co^v*lM09k..."
+                            >
+
+                            <button type="submit">
+                                Create
+                            </button>
+                        </form>
                     </dd>
 
                     <dt>12.max & min</dt>
@@ -426,10 +488,54 @@
                         while min defines the minimum acceptable value in form inputs.
                     </dd>
 
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-min-max"&gt;Age: &lt;/label&gt;
+                                &lt;input type="number" min="18" max="100"&gt;
+                                &lt;button type="submit">Send&lt;/button&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-min-max">Age: </label>
+                            <input type="number" min="18" max="100">
+                            <button type="submit">Send</button>
+                        </form>
+                    </dd>
+
                     <dt>13.pattern</dt>
                     <dd>
                         pattern attribute uses a regular expression (regex) to validate the format of 
                         user input (e.g., email, phone, or custom rules) in form fields.
+                    </dd>
+
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-pattern"&gt;Enter New E-mail: &lt;/label&gt;
+                                &lt;input 
+                                    type="email" title="Wrong email pattern" pattern="(\w+[\.\-_]*\w+)+@\w+(\.\w+){1,3}"
+                                    required autocomplete="off" placeholder="email@example.com"
+                                    id="id-pattern" name="nothing"
+                                    &gt;
+                                &lt;button type="submit">Sign in&lt;/button&gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-pattern">Enter New E-mail: </label>
+                            <input 
+                                type="email" title="Wrong email pattern" pattern="(\w+[\.\-_]*\w+)+@\w+(\.\w+){1,3}"
+                                required autocomplete="off" placeholder="email@example.com"
+                                id="id-pattern" name="nothing"
+                                >
+                                <button type="submit">Sign in</button>
+                        </form>
                     </dd>
 
                     <dt>14.accept</dt>
@@ -447,6 +553,25 @@
                         enter multiple email addresses in a single input field.
                     </dd>
 
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog"&gt;
+                                &lt;label for="id-upload"&gt;Choose an Avatar: &lt;/label&gt;
+                                &lt;input type="file" id="id-upload" name="upload"
+                                        accept="image/*" multiple
+                                &gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-upload">Choose an Avatar: </label>
+                            <input type="file" id="id-upload" name="upload"
+                                    accept="image/*" multiple
+                            >
+                        </form>
+                    </dd>
                     <dt>16.step</dt>
                     <dd>
                         The step attribute defines the interval between valid values for an input field.
@@ -457,7 +582,23 @@
                         such as 0.1 or 0.5, to allow decimal quantities.
                     </dd>
 
-                    <dt>17.input</dt>
+                    <dd>
+                        <pre><code>
+
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-step" >Gold to buy: </label>
+                            <input type="number" name="step" id="id-step" required step="0.01"
+                                    min="0.01" max="5000"
+                            > /gr
+                            <button type="submit">Buy</button>
+                        </form>
+                    </dd>
+
+                    <dt>17.inputmode</dt>
                     <dd>
                         The inputmode attribute tells the browser which on-screen keyboard is most appropriate 
                         for the input field, especially on mobile devices.
@@ -466,13 +607,34 @@
                         is usually displayed. That's exactly what the inputmode attribute is designed to do.
                     </dd>
 
+                    <dd>
+                        <pre><code>
+                             &lt;form action="#" method="dialog" &gt;
+                                 &lt;label for="id-inputmode"&gt;Enter your phone numbre: &lt;/label&gt;
+                                 &lt;input type="tel" name="inputmode" id="id-inputmode"
+                                        required inputmode="tel"
+                                &gt;
+                            &lt;/form&gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog">
+                            <label for="id-inputmode">Enter your phone name: </label>
+                            <input type="tel" name="inputmode" id="id-inputmode"
+                                    required inputmode="tel"
+                            >
+                        </form>
+                    </dd>
+
                     <dt>18.list</dt>
                     <dd>
                         The list attribute is used together with the &lt;datalist&gt; and &lt;option&gt; elements 
                         to provide a list of suggested values for an input field.
                         You've probably used this feature before. For example, when filling out a 
                         registration form, you may start typing the name of your country and see a list 
-                        of matching suggestions appear. That's a common use case for list and &lt;datalist&gt;.
+                        of matching suggestions appear. That's a common use case for list and &lt;datalist&gt;. Look at 
+                        <a href="#drop-down">here</a>.
                     </dd>
 
                     <dt>19.form</dt>
@@ -484,12 +646,41 @@
                         it is located elsewhere in the document.
                     </dd>
 
+                    <dd>
+                        <pre><code>
+                            &lt;form action="#" method="dialog" id="external"&gt;
+                                &lt;label for="id-from"&gt;Choose your free time&lt;/label&gt;
+                                &lt;input type="time" id="id-form" name="form" required
+                                    min="08:45" max="20:30"
+                                &gt;
+                                &lt;button type="submit"&gt;Search&lt;/button&gt;
+                        &lt;/form&gt;
+
+                        &lt;label for=""&gt;Date: &lt;/label&gt;
+                        &lt;input type="date"  required min="2026-08-26"
+                                max="2026-11-29"    form="external"
+                                &gt;
+                        </code></pre>
+                    </dd>
+
+                    <dd>
+                        <form action="#" method="dialog" id="external">
+                            <label for="id-from">Choose your free time</label>
+                            <input type="time" id="id-form" name="form" required
+                                    min="08:45" max="20:30"
+                            >
+                            <button type="submit">Search</button>
+                        </form>
+                        <label for="">Date: </label>
+                        <input type="date"  required min="2026-08-26"
+                                max="2026-11-29"    form="external"
+                                >
+                    </dd>
+
                 </dl>
             <h3 id="#label">2.2.label</h3>
                 <p>
-                    As you may have noticed in the example above, the form feels somewhat 
-                    unclear because there is no indication of what the user is expected to 
-                    enter into the input field. To address this, you can use the &lt;label&gt; 
+                    As you may have noticed in the example above you can use the &lt;label&gt; 
                     element to associate descriptive text with each form control. This improves 
                     both usability and accessibility, as clicking on the label will focus the 
                     corresponding input field.
