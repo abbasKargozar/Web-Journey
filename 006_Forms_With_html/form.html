@@ -734,7 +734,7 @@
                     &lt;input type="radio" name="gender" id="id-gender-m" value="male" required&gt;
 
                     &lt;label for="id-gender-f"&gt;Female&lt;/label&gt;
-                    &lt;input type="radio" name="gender" id="id-gender-f" value="female required"&gt;
+                    &lt;input type="radio" name="gender" id="id-gender-f" value="female"&gt;
 
                     &lt;button type="submit"&gt;send&lt;/button&gt;
                 </form>
@@ -745,7 +745,7 @@
                 <input type="radio" name="gender" id="id-gender-m" value="male" required>
 
                 <label for="id-gender-f">Female</label>
-                <input type="radio" name="gender" id="id-gender-f" value="female required">
+                <input type="radio" name="gender" id="id-gender-f" value="female">
 
                 <button type="submit">send</button>
             </form>
@@ -766,7 +766,7 @@
             <pre><code>
                 &lt;form action="#" method="dialog"&gt;
                     &lt;label for="id-skill-html">html&lt;/label&gt;
-                    &lt;input type="checkbox" name="skill[]" id="id-skill" value="html"&gt;
+                    &lt;input type="checkbox" name="skill[]" id="id-skill-html" value="html"&gt;
 
                     &lt;label for="id-skill-css">css&lt;/label&gt;
                     &lt;input type="checkbox" name="skill[]" id="id-skill-css" value="css"&gt;
@@ -786,7 +786,7 @@
 
             <form action="#" method="dialog">
                 <label for="id-skill-html">html</label>
-                <input type="checkbox" name="skill[]" id="id-skill" value="html">
+                <input type="checkbox" name="skill[]" id="id-skill-html" value="html">
 
                 <label for="id-skill-css">css</label>
                 <input type="checkbox" name="skill[]" id="id-skill-css" value="css">
@@ -798,7 +798,7 @@
                 <input type="checkbox" name="skill[]" id="id-skill-SQL" value="SQL">
 
                 <label for="id-skill-php">php</label>
-                <input type="checkbox" name="skill[]" id="id-skill" value="php">
+                <input type="checkbox" name="skill[]" id="id-skill-php" value="php">
 
                 <button type="submit">Send</button>
             </form>
@@ -833,7 +833,7 @@
                 &lt;form action="#" method="dialog"&gt;
                     &lt;label for="id-color"&gt;Select your favorit color&lt;/label&gt;
                     &lt;select name="color" id="id-color"&gt;
-                        &lt;option value="disabled selected">Choose&lt;/option&gt;
+                        &lt;option value="" disabled selected>Choose&lt;/option&gt;
                         &lt;option value="red">Red&lt;/option&gt;
                         &lt;option value="green">Green&lt;/option&gt;
                         &lt;option value="blue">Blue&lt;/option&gt;
@@ -847,7 +847,7 @@
             <form action="#" method="dialog">
                     <label for="id-color">Select your favorit color</label>
                     <select name="color" id="id-color">
-                        <option value="disabled selected">Choose</option>
+                        <option value=""disabled selected>Choose</option>
                         <option value="red">Red</option>
                         <option value="green">Green</option>
                         <option value="blue">Blue</option>
@@ -861,6 +861,7 @@
 
             <pre><code>
                 &lt;form action="#" method="dialog"&gt;
+
                     &lt;label for="id-car"&gt;Choose Your Favorit Cars:&lt;/label&gt;
                     &lt;select name="car[]" id="id-car" multiple&gt;
                         &lt;option value="Dodge Challenger"&gt;Dodge Challenger&lt;/option&gt;
@@ -874,7 +875,11 @@
                         &lt;option value="Toyota Camry"&gt;Toyota Camry&lt;/option&gt;
                         &lt;option value="Fiat 500"&gt;Fiat 500&lt;/option&gt;
                     &lt;/select&gt;
+
+                    &lt;button type="submit"&gt;Send&lt;/button&gt;
+
                 &lt;/form&gt;
+            
             </code></pre>
 
             <form action="#" method="dialog">
@@ -891,13 +896,370 @@
                     <option value="Toyota Camry">Toyota Camry</option>
                     <option value="Fiat 500">Fiat 500</option>
                 </select>
+                <button type="submit">Send</button>
             </form>
 
     <h2 id="text-section">6.Comment Section</h2>
 
-    
+    <p>
+        When you want the user to be able to write long text (like comments, bio, or messages), 
+        a standard &lt;input&gt; tag (which is only one line) won’t work. Here, we use the &lt;textarea&gt; tag. 
+        This tag gives the user enough space to write several lines of text. Keep in mind that:
+    </p>
+    <ul>
+        <li>Unlike &lt;input&gt;, the &lt;textarea&gt; tag has a closing tag (&lt;/textarea&gt;).</li>
+        
+        <li>To set the size of the typing area, we use the rows (number of lines) and cols 
+            (number of columns) attributes.
+        </li>
+
+        <li>
+            The name attribute is essential here as well, so the data can be sent to the server.
+        </li>
+    </ul>
+
+    <pre><code>
+        &lt;form action="#" method="dialog"&gt;
+            &lt;label for="id-comment"&gt;Comment &lt;/label&gt;
+            &lt;br&gt;
+            &lt;textarea name="comment" id="id-comment" 
+                cols="30" rows="6" maxlength="500"
+                minlength="5" placeholder="type between 5 to 500 characters"
+            &gt;&lt;/textarea&gt;
+            &lt;br&gt;
+            &lt;button type="submit"&gt;Send&lt;/button&gt;
+        &lt;/form&gt;
+    </code></pre>
+
+    <form action="#" method="dialog">
+        <label for="id-comment">Comment </label><br>
+        <textarea name="comment" id="id-comment" 
+            cols="30" rows="6" maxlength="500"
+            minlength="5" placeholder="type between 5 to 500 characters"
+        ></textarea>
+        <br><button type="submit">Send</button>
+    </form>
+
     <h2 id="categorise">7.Categorise</h2>
+
+    <p>
+        Placeholder is a hint text shown inside a form field to help the user understand what 
+        should be entered. This text usually appears before the user starts typing, and it 
+        disappears as soon as the user begins to write. The placeholder attribute is mostly used in 
+        input and textarea elements.
+    </p>
+
+    <pre><code>
+            &lt;fieldset&gt;
+                    &lt;legend&gt;Personal information&lt;/legend&gt;
+                    &lt;label for="id-name-personal"&gt;Name&lt;/label&gt;
+                    &lt;input type="text" required maxlength="15" 
+                        id="id-name-personal" name="full-name"
+                        placeholder="Enter your full-name"
+                        &gt;
+                    &lt;label for="id-age-personal"&gt;Age:&lt;/label&gt;
+                    &lt;input type="number" name="age-personal" id="id-age-personal"
+                        min="18" max="100" placeholder="18 to 100" step="1"
+                        style="width: 70px;"
+                    &gt;
+                    Mariage Status: 
+                    &lt;input type="radio" name="mariage-personal" id="id-mariage-single"&gt;
+                    &lt;label for="id-mariage-single"&gt;Single&lt;/label&gt;
+                    
+                    &lt;input type="radio" name="mariage-personal" id="id-mariage-marid"&gt;
+                    &lt;label for="id-mariage-marid"&gt;Marid&lt;/label&gt;
+
+                    &lt;input type="radio" name="mariage-personal" id="id-mariage-engaged"&gt;
+                    &lt;label for="id-mariage-engaged"&gt;id-mariage-engaged&lt;/label&gt;
+
+                    &lt;input type="radio" name="mariage-personal" id="id-mariage-divorced"&gt;
+                    &lt;label for="id-mariage-divorced"&gt;Divorced&lt;/label&gt;
+
+                    &lt;input type="radio" name="mariage-personal" id="id-mariage-inrel"&gt;
+                    &lt;label for="id-mariage-inrel"&gt;In Relationship&lt;/label&gt;
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Contact Information&lt;/legend&gt;
+                    
+                    &lt;label for="id-tel-personal"&gt;Phone Number:&lt;/label&gt;
+                    &lt;input type="tel" name="tel-personal" id="id-tel-personal"
+                        required maxlength="13" placeholder="+98***" 
+                    &gt;
+
+                    &lt;label for="id-tel-personal"&gt;Emergency Phone Number:&lt;/label&gt;
+                    &lt;input type="tel" name="tel-emergency-personal" id="id-tel-emergency-personal"
+                        maxlength="13" placeholder="+98***" 
+                    &gt;
+
+                    &lt;label for="id-email-personal"&gt;E-mail:&lt;/label&gt;
+                    &lt;input type="email" autocomplete="email" required
+                        placeholder="email@example.com"
+                    &gt;
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Address&lt;/legend&gt;
+                    &lt;label for="id-user-personal-address"&gt;Your full address:&lt;/label&gt;
+                    &lt;textarea name="user-personal-address" id="id-user-personal-address"
+                        cols="90" rows="2" maxlength="500" required           
+                    &gt;&lt;/textarea&gt;
+                &lt;/fieldset&gt;
+        &lt;/form&gt;
+    </code></pre>
+
+
+    <form action="#" method="dialog">
+            <fieldset>
+                <legend>Personal information</legend>
+                <label for="id-name-personal">Name</label>
+                <input type="text" required maxlength="15" 
+                    id="id-name-personal" name="full-name"
+                    placeholder="Enter your full-name"
+                    >
+                <label for="id-age-personal">Age:</label>
+                <input type="number" name="age-personal" id="id-age-personal"
+                    min="18" max="100" placeholder="18 to 100" step="1"
+                    style="width: 70px;"
+                >
+                Mariage Status: 
+                <input type="radio" name="mariage-personal" id="id-mariage-single">
+                <label for="id-mariage-single">Single</label>
+                
+                <input type="radio" name="mariage-personal" id="id-mariage-marid">
+                <label for="id-mariage-marid">Married</label>
+
+                <input type="radio" name="mariage-personal" id="id-engaged">
+                <label for="id-engaged">engaged</label>
+
+                <input type="radio" name="mariage-personal" id="id-mariage-divorced">
+                <label for="id-mariage-divorced">Divorced</label>
+
+                <input type="radio" name="mariage-personal" id="id-mariage-inrel">
+                <label for="id-mariage-inrel">In Relationship</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact Information</legend>
+                
+                <label for="id-tel-personal">Phone Number:</label>
+                <input type="tel" name="tel-personal" id="id-tel-personal"
+                    required maxlength="13" placeholder="+98***" 
+                >
+
+                <label for="id-tel-emergency-personal">Emergency Phone Number:</label>
+                <input type="tel" name="tel-emergency-personal" id="id-tel-emergency-personal"
+                    maxlength="13" placeholder="+98***" 
+                >
+
+                <label for="id-email-personal">E-mail:</label>
+                <input type="email" id="id-email-personal" name="email-personal" 
+                    autocomplete="email" required placeholder="email@example.com"
+                >
+            </fieldset>
+
+            <fieldset>
+                <legend>Address</legend>
+                <label for="id-user-personal-address">Your full address:</label>
+                <textarea name="user-personal-address" id="id-user-personal-address"
+                    cols="90" rows="2" maxlength="500" required           
+                ></textarea>
+            </fieldset>
+
+    </form>
     <h2 id="example">8.Example</h2>
+    <p>
+        In the following section, some examples will be provided based on the 
+        concepts we have discussed so far.
+    </p>
+
+    <p>Example:</p>
+
+    <pre><code>
+        &lt;form action="#" method="dialog"&gt;
+            &lt;fieldset&gt;
+                &lt;legend style="text-align: center;"&gt;Job Application Form&lt;/legend&gt;
+                
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Personal Information&lt;/legend&gt;
+
+                    &lt;label for="full-name"&gt;Name: &lt;/label&gt;
+                    &lt;input type="text" name="Name" id="full-name" required maxlength="30"&gt;
+
+                    &lt;label for="age"&gt;Age: &lt;/label&gt;
+                    &lt;input type="number" name="age" id="age" placeholder="30 to 40"
+                        min="30" max="40" required
+                    &gt;
+
+                    &lt;label for="email"&gt;E-mail: &lt;/label&gt;
+                    &lt;input type="email" name="email" id="email" required maxlength="30"&gt;
+
+                    &lt;label for="phone"&gt;Phone Number: &lt;/label&gt;
+                    &lt;input type="tel" name="phone-number" id="phone-number" required maxlength="11" placeholder="09***"&gt;
+
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Skills&lt;/legend&gt;
+
+                    &lt;label for="position"&gt;Position: &lt;/label&gt;
+                    &lt;select name="position" id="position" required&gt;
+                        &lt;option disabled selected value=""&gt;select a position&lt;/option&gt;
+                        &lt;option value="front-end"&gt;front-end developer&lt;/option&gt;
+                        &lt;option value="back-end"&gt;back-end developer&lt;/option&gt;
+                        &lt;option value="seo"&gt;SEO&lt;/option&gt;
+                    &lt;/select&gt;
+                    Programming languages:
+                    &lt;input type="checkbox" name="prog-lang[]" id="html" value="html"&gt;
+                    &lt;label for="html"&gt;html&lt;/label&gt;
+
+                    &lt;input type="checkbox" name="prog-lang[]" id="css" value="css"&gt;
+                    &lt;label for="css"&gt;css&lt;/label&gt;
+                    
+                    &lt;input type="checkbox" name="prog-lang[]" id="JS" value="js"&gt;
+                    &lt;label for="JS"&gt;JavaScript&lt;/label&gt;
+
+                    &lt;input type="checkbox" name="prog-lang[]" id="sql" value="sql"&gt;
+                    &lt;label for="sql"&gt;SQL&lt;/label&gt;
+                    
+                    &lt;input type="checkbox" name="prog-lang[]" id="php" value="php"&gt;
+                    &lt;label for="php"&gt;php&lt;/label&gt;
+
+                    &lt;input type="checkbox" name="prog-lang[]" id="py" value="py"&gt;
+                    &lt;label for="py"&gt;Python&lt;/label&gt;
+                    
+                    &lt;input type="checkbox" name="prog-lang[]" id="Csharp" value="Csharp"&gt;
+                    &lt;label for="Csharp"&gt;#C&lt;/label&gt;
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;CV&lt;/legend&gt;
+                    &lt;label for="cv"&gt;Upload your CV: &lt;/label&gt;
+                    &lt;input type="file" accept=".pdf"&gt;
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Experience&lt;/legend&gt;
+                    Level:
+                    &lt;input type="radio" name="level" id="junior" value="junior" required&gt;
+                    &lt;label for="junior"&gt;Junior&lt;/label&gt;
+
+                    &lt;input type="radio" name="level" id="mid-level" value="mid"&gt;
+                    &lt;label for="mid-level"&gt;Mid Level&lt;/label&gt;
+
+                    &lt;input type="radio" name="level" id="senior" value="senior"&gt;
+                    &lt;label for="senior"&gt;Senior&lt;/label&gt;
+                &lt;/fieldset&gt;
+
+                &lt;fieldset&gt;
+                    &lt;legend&gt;Cover Letter&lt;/legend&gt;
+
+                    &lt;label for="cover-letter"&gt;Tell us about yourself:&lt;/label&gt;
+                    &lt;br&gt;
+                    &lt;textarea name="cover-letter" id="cover" cols="100" rows="10"
+                        maxlength="1000" placeholder="characters limit = 1,000"
+                    &gt;&lt;/textarea&gt;
+                &lt;/fieldset&gt;
+
+                &lt;input type="checkbox" id="term"required&gt;
+                &lt;label for="term"&gt;I agree to the terms and conditions.&lt;/label&gt;
+
+                &lt;button type="submit"&gt;Apply&lt;/button&gt;
+            &lt;/fieldset&gt;
+        &lt;/form&gt;
+    </code></pre>
+
+    <form action="#" method="dialog">
+        <fieldset>
+            <legend style="text-align: center;">Job Application Form</legend>
+            
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label for="full-name">Name: </label>
+                <input type="text" name="Name" id="full-name" required maxlength="30">
+
+                <label for="age">Age: </label>
+                <input type="number" name="age" id="age" placeholder="30 to 40"
+                    min="30" max="40" required
+                >
+
+                <label for="email">E-mail: </label>
+                <input type="email" name="email" id="email" required maxlength="30">
+
+                <label for="phone">Phone Number: </label>
+                <input type="tel" name="phone-number" id="phone-number" required maxlength="11" placeholder="09***">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Skills</legend>
+
+                <label for="position">Position: </label>
+                <select name="position" id="position" required>
+                    <option disabled selected value="">select a position</option>
+                    <option value="front-end">front-end developer</option>
+                    <option value="back-end">back-end developer</option>
+                    <option value="seo">SEO</option>
+                </select>
+                Programming languages:
+                <input type="checkbox" name="prog-lang[]" id="html" value="html">
+                <label for="html">html</label>
+
+                <input type="checkbox" name="prog-lang[]" id="css" value="css">
+                <label for="css">css</label>
+                
+                <input type="checkbox" name="prog-lang[]" id="JS" value="js">
+                <label for="JS">JavaScript</label>
+
+                <input type="checkbox" name="prog-lang[]" id="sql" value="sql">
+                <label for="sql">SQL</label>
+                
+                <input type="checkbox" name="prog-lang[]" id="php" value="php">
+                <label for="php">php</label>
+
+                <input type="checkbox" name="prog-lang[]" id="py" value="py">
+                <label for="py">Python</label>
+                
+                <input type="checkbox" name="prog-lang[]" id="Csharp" value="Csharp">
+                <label for="Csharp">#C</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>CV</legend>
+                <label for="cv">Upload your CV: </label>
+                <input type="file" accept=".pdf">
+            </fieldset>
+
+            <fieldset>
+                <legend>Experience</legend>
+                Level:
+                <input type="radio" name="level" id="junior" value="junior" required>
+                <label for="junior">Junior</label>
+
+                <input type="radio" name="level" id="mid-level" value="mid">
+                <label for="mid-level">Mid Level</label>
+
+                <input type="radio" name="level" id="senior" value="senior">
+                <label for="senior">Senior</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Cover Letter</legend>
+
+                <label for="cover-letter">Tell us about yourself:</label>
+                <br>
+                <textarea name="cover-letter" id="cover" cols="100" rows="10"
+                    maxlength="1000" placeholder="characters limit = 1,000"
+                ></textarea>
+            </fieldset>
+
+            <input type="checkbox" id="term" required>
+            <label for="term">I agree to the terms and conditions.</label>
+
+            <button type="submit">Apply</button>
+        </fieldset>
+    </form>
 
 </body>
 </html>
