@@ -1,0 +1,80 @@
+body{
+    background-color: rgba(31, 224, 128, 0.7);
+}
+
+#style-changer{
+    color:white;
+    font-weight: 800;
+    font-size: larger;
+    background-color: orangered;
+    padding: 10px;
+    border-radius: 40px;  
+    margin: 5px;
+}
+
+h1{
+    color: rgb(74, 74, 197);
+    text-align: center;
+}
+article{
+    background-color: aquamarine;
+    margin: 30px;
+    padding: 15px;
+    border-radius: 20px;
+}
+article p {
+    background-color: aqua;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: justify;
+}
+
+/**/
+.start{
+    background-color: rgba(156, 216, 66, 0.8);
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin: 15px;
+    text-align: justify;
+}
+
+.code{
+    padding: 15px;
+    gap: 40px;
+    background-color: gray;
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    margin: 20px 15px 20px 15px;
+
+
+    
+}
+.console{
+    padding: 15px;
+    background-color: gainsboro;
+    border: 1px solid rgba(220, 220, 220, 0.7);
+    border-radius:20px;
+    color: black;
+    box-shadow: 5px 5px rgba(220, 220, 220, 0.6);
+    flex: 1;
+}
+.console pre{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    white-space: pre-line;
+    text-align: center;
+}
+.ide{
+    padding: 15px;
+    background-color: gainsboro;
+    border: 1px solid rgba(220, 220, 220, 0.7);
+    border-radius:20px;
+    color: black;
+    box-shadow: 5px 5px rgba(220, 220, 220, 0.6);
+    flex: 1;
+    text-align: center;
+}
