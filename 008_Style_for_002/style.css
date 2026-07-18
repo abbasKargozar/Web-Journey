@@ -1,3 +1,4 @@
+/*style for whole page*/
 body{
     background-color: #0A0E1A;
     color: #E8EDF5;
@@ -6,6 +7,13 @@ body{
 h1,h2,h3{
     color: #8892B0;
     text-align: center;
+}
+
+/*Top buttons style*/
+.option{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
 }
 #style-changer{
     background-color: #4b7bff;
@@ -16,11 +24,31 @@ h1,h2,h3{
     border: 1px solid #1F2A40;
     border-radius: 20px;
 }
+#go-back button{
+    background-color: #6ea330;
+    color: #111b18;
+    margin: 5px;
+    padding: 5px;
+    font-weight: 700;
+    border: 1px solid #6ea333;
+    border-radius: 20px;
+}
+#go-back label{
+    padding-right: 25px;
+}
+
 #style-changer:hover{
     background-color:#0f4cf5;
     color: wheat;
     font-weight: 800;
 }
+ #go-back button:hover{
+    background-color:#2cae2c;
+    color: wheat;
+    font-weight: 800;
+ }
+
+ /*First trinary box */
 .head{
     display: flex;
     flex-direction: row;
@@ -82,12 +110,12 @@ h1,h2,h3{
     transform: scale(1.01);
 }
 
-/*end table*/
-
 caption p{
     text-align: center;
 }
+/*end table*/
 
+/*final Complex table description*/
 .intro-complex-table,
 .final-example{
     background-color: #1F2A40;
