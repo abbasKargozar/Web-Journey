@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="style-ref" rel="stylesheet" href="../008_Style_for_002/style.css">
+    <script src="../007_Style_for_001/javaScript.js" defer></script>
+
+    <title>Raw table</title>
+
+</head>
+<body>
+    <div class="option">
+        <button id="style-changer">Click to disable CSS</button>
+    </div>
+    
+    <h1>
+        How to create A table in html
+    </h1>
+
+    <div class="head">
+        <section class="intro">
+            <p>There are some essential tags below:</p>
+
+            <dl>
+                <dt>&lt;table&gt; &lt;/table&gt;</dt>
+                    <dd>This is base for every table</dd>
+                <dt>&lt;th&gt; &lt;/th&gt;</dt>
+                    <dd>We can create table header by this</dd>
+                <dt>&lt;tr&gt; &lt;/tr&gt;</dt>
+                    <dd>It creates a new row for table</dd>
+                <dt>&lt;td&gt; >&lt;/td&gt;</dt>
+                    <dd>Use this inside of &lt;tr&gt; &lt;/tr&gt; to create diffrent column</dd>
+                <dt>&lt;caption&gt;...&lt;/caption&gt;</dt>
+                    <dd>write your table caption between this tag</dd>
+            </dl>
+        </section>
+
+        <section class="example-one">
+
+            <p>This is a  Table without "border" attribute</p>
+
+            <table class="my-table-one">
+                <tr>
+                    <th>Forename</th>
+                    <th>Surname</th>
+                    <th>City</th>
+                    <th>Age</th>
+                    <th>job</th>
+                    <th>Salary</th>
+                </tr>
+
+                <tr>
+                    <td>Charlie</td>
+                    <td>Ashford</td>
+                    <td>London</td>
+                    <td>23</td>
+                    <td>Chef</td>
+                    <td>$7000</td>
+                </tr>
+
+                <tr>
+                    <td>Annie</td>
+                    <td>Ravenwood</td>
+                    <td>Manchester</td>
+                    <td>20</td>
+                    <td>weitress</td>
+                    <td>$4000</td>
+                </tr>
+
+                <tr>
+                    <td>Alex</td>
+                    <td>Horseman</td>
+                    <td>Manchester</td>
+                    <td>21</td>
+                    <td>weitr</td>
+                    <td>$4000</td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="example-two">
+
+            <p>This is a table with CSS Style</p>
+
+            <table class="my-table-two">
+                <tr>
+                    <th>Forename</th>
+                    <th>Surname</th>
+                    <th>City</th>
+                    <th>Age</th>
+                    <th>job</th>
+                    <th>Salary</th>
+                </tr>
+
+                <tr>
+                    <td>Charlie</td>
+                    <td>Ashford</td>
+                    <td>London</td>
+                    <td>23</td>
+                    <td>Chef</td>
+                    <td>$7000</td>
+                </tr>
+
+                <tr>
+                    <td>Annie</td>
+                    <td>Ravenwood</td>
+                    <td>Manchester</td>
+                    <td>20</td>
+                    <td>weitress</td>
+                    <td>$4000</td>
+                </tr>
+
+                <tr>
+                    <td>Alex</td>
+                    <td>Horseman</td>
+                    <td>Manchester</td>
+                    <td>21</td>
+                    <td>weitr</td>
+                    <td>$4000</td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+    
+        
+    <section class="intro-complex-table">
+        <h2>A little bit complex table</h2>
+        <p>Do you want to draw a table like the below one? Don't worry it's really simple
+            and all things you need are <strong>colspan="number"</strong> & <strong>rowspan="number"</strong> 
+            inside of th or td tag like:
+        </p>
+        <code style="font-size: 1.2em;">
+            &lt;th colspan = "2"&gt; &lt;/th&gt;
+                            or 
+            &lt;td rowspan = "2"&gt; &lt;/td&gt;
+        </code>
+        <p style="font-size: 1.2em;">or</p>
+        <code style="font-size: 1.2em;">
+            &lt;td rowspan = "2"&gt; &lt;/td&gt;
+        </code>
+        <pre style="text-align: center;">
+        -----------------------------------------------------------------
+        |                        Weekly Schedule                        |
+        -----------------------------------------------------------------
+        |    Time    |    Mon    |    Tue    |    Wed    |     Thu      |
+        -----------------------------------------------------------------
+        |    9:00    |          Math         |  Physics  |   English    |
+        -----------------------------------------------------------------
+        |   10:00    |                         Break                    |
+        -----------------------------------------------------------------
+        |   11:00    |           |  Biology  |                          |
+        -------------- Chemistry -------------          History         -
+        |   12:00    |           |    Art    |                          |
+        -----------------------------------------------------------------
+        </pre>
+    </section> 
+
+
+        <h3>so this is the table:</h3>
+
+        <section class="final-example">
+                <pre><code>
+                    &lt;table class="my-table"&gt;
+                        &lt;caption&gt;Table NO.2: complex table&lt;/caption&gt;
+                        &lt;tr&gt;
+                            &lt;th colspan="5"&gt;Weekly Schedule&lt;/th&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;td&gt;Time&lt;/td&gt;
+                            &lt;td&gt;Mon&lt;/td&gt;
+                            &lt;td&gt;Tue&lt;/td&gt;
+                            &lt;td&gt;Wed&lt;/td&gt;
+                            &lt;td&gt;Thu&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;td&gt;9:00&lt;/td&gt;
+                            &lt;td colspan="2"&gt;Math&lt;/td&gt;
+                            &lt;td&gt;Physics &lt;/td&gt;
+                            &lt;td&gt;English&lt;/td&gt;
+                        &lt;/tr&gt;
+
+                        &lt;tr&gt;
+                            &lt;td&gt;10:00&lt;/td&gt;
+                            &lt;td colspan="4"&gt;Break&lt;/td&gt;    
+                        &lt;/tr&gt;
+                        &lt;tr&gt;
+                            &lt;td&gt;11:00&lt;/td&gt;
+                            &lt;td rowspan="2"&gt;Chemistry&lt;/td&gt;
+                            &lt;td&gt;Biology&lt;/td&gt;
+                            &lt;td colspan="2" rowspan="2"&gt;History&lt;/td&gt;
+                        &lt;/tr&gt;
+                                        
+                        &lt;tr&gt;
+                            &lt;td&gt;12:00&lt;/td&gt;
+                            &lt;!-- you should not put this again:&lt;td&gt;Chemistry&lt;/td&gt;--&gt;
+                            &lt;td&gt;Art&lt;/td&gt;
+                            &lt;!--&lt;td colspan="2"&gt;History&lt;/td&gt;--&gt;
+                        &lt;/tr&gt;
+                    &lt;/table&gt;
+                </code></pre>
+
+                <table class="my-table">
+                <caption>Table NO.2: complex table</caption>
+                <tr>
+                    <th colspan="5">Weekly Schedule</th>
+                </tr>
+
+                <tr>
+                    <td>Time</td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Wed</td>
+                    <td>Thu</td>
+                </tr>
+
+                <tr>
+                    <td>9:00</td>
+                    <td colspan="2">Math</td>
+                    <td>Physics </td>
+                    <td>English</td>
+                </tr>
+
+                <tr>
+                    <td>10:00</td>
+                    <td colspan="4">Break</td>    
+                </tr>
+                <tr>
+                    <td>11:00</td>
+                    <td rowspan="2">Chemistry</td>
+                    <td>Biology</td>
+                    <td colspan="2" rowspan="2">History</td>
+                </tr>
+                                
+                <tr>
+                    <td>12:00</td>
+                    <!-- you should not put this again:<td>Chemistry</td>-->
+                    <td>Art</td>
+                    <!--<td colspan="2">History</td>-->
+                </tr>
+                
+            </table>
+              <p><em>Note: </em>Please do not repeate rowspan cell in other continuing cells</p>
+        </section>
+       
+
+      
+</body>
+</html>
