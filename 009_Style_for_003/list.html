@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+        <title>List and Css</title>
+        <link id="style-ref" rel="stylesheet" href="./style.css">
+        <script src="../007_Style_for_001/javaScript.js" defer></script>
+    </head>
+
+ 
+    <body>
+
+        <div class="option">
+            <button id="style-changer">Click to disable CSS</button>
+            <form action="../003_List_With_html/list.html">
+                <label for="or">or</label>
+                <button id="or">First Pure Design</button>
+            </form>
+        </div>
+
+        <div class="continer"> 
+            <h1 style="text-align: center;">Create diffrent types of list in html</h1>
+            <p>There are three different types of lists in HTML.</p>
+            <h2>Unordered Lists</h2>
+            <p>You need only two tag to create this type of list. One
+                &lt;ul&gt; &lt;/ul&gt;for creation of the base of the list and &lt;li&gt; &lt;/li&gt;
+                for example: 
+            </p>
+            <pre><code>
+                &lt;ul&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                &lt;/ul&gt;
+            </code></pre>
+
+            <p>This is an Unordered list</p>
+            <p>CSS offers various list-style-type values, which we will introduce in the future. Without CSS, 
+                however, we are limited to the default disc value, which appears as a solid black circle
+            </p>
+
+            <ul>
+                <li>disc</li>
+                <li>circle</li>
+                <li>square</li>
+                <li>none</li>
+            </ul>
+        
+            <br>
+        
+            <h2>Ordered Lists</h2>
+            <p>"Ordered lists are like unordered lists, 
+                but they order items using numbers, letters, 
+                or Roman numerals. You can also pick where to start counting
+                and reverse the order if you want."
+            </p>
+
+            <pre><code>
+                &lt;ol&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                    &lt;li&gt; content &lt;/li&gt;
+                &lt;/ol&gt;
+            </code></pre>
+
+            <ol type="I"> <!--reversed-->
+                <li>type="1"</li>
+                <li>type="a"</li>
+                <li>type="A"</li>
+                <li>type="i"</li>
+                <li>type="I"</li>
+            </ol>
+            <p><em>Note:</em> You can reverse the order with 'reversed' attribute</p>
+
+            <h2>Definition Lists</h2>
+                <p>
+                    Definition lists are different from ordered and unordered lists. 
+                    Instead of just listing items, they consist of term‑and‑description pairs. 
+                    Each term is defined using the &lt;dt&gt; tag, and its corresponding description is provided 
+                    with the &lt;dd&gt; tag. This structure makes definition lists ideal for glossaries, 
+                    metadata, or any content that requires a term‑to‑definition relationship.
+                </p>
+
+            <pre><code>
+                &lt;dl&gt;
+                    &lt;dt&gt; title &lt;/dt&gt;
+                    &lt;dd&gt; description &lt;/dd&gt;
+
+                    &emsp;&lt;dt&gt; title &lt;/dt&gt;
+                    &emsp;&lt;dd&gt; description &lt;/dd&gt;
+
+                    &emsp;&lt;dt&gt; title &lt;/dt&gt;
+                    &emsp;&lt;dd&gt; description &lt;/dd&gt;
+                
+                &lt;/dl&gt;
+            </code></pre>
+
+            <dl>
+                <dt>Unordered lists</dt>
+                <dd>Displays list items with bullet points, used when the order of items doesn't matter.</dd>
+
+                <dt>Ordered Lists</dt>
+                <dd>Displays list items in a numbered or lettered sequence, used when the order matters.</dd>
+
+                <dt>Definition lists</dt>
+                <dd>Groups terms with their descriptions, used for glossaries, metadata, or definition pairs.</dd>
+
+            </dl>
+
+            <h2>Nested List</h2>
+                <p>
+                    "Lists can be nested inside one another to create hierarchical structures. 
+                    You can place an unordered list inside an ordered list, or vice versa, 
+                    and even mix different list types. This is particularly useful for creating outlines, 
+                    sitemaps, multi‑level menus, or any content that requires multiple levels of indentation 
+                    to show relationships between items."
+                </p>
+                <p>
+                    This nesting capability is widely used in modern web development to build complex 
+                    navigation systems, including dropdown menus, mega menus, and collapsible sidebars. 
+                    By combining nested lists with CSS, you can create interactive and visually appealing 
+                    navigation structures. For instance, a main list item can contain a sublist that appears 
+                    only when hovered or clicked, forming the foundation of most website menus. 
+                    These advanced styling techniques and interactions will be covered in greater detail in the CSS section.
+                </p>
+                <p>
+                    For Example:
+                </p>
+                <aside class="final-example">
+                    <pre final-example-pre><code>
+                        &lt;dl&gt;
+                            &lt;dt&gt;Unordered lists&lt;/dt&gt;
+                                &lt;dd&gt; CSS list-style-type
+                                    &lt;ul&gt;
+                                        &lt;li&gt;disc&lt;/li&gt;
+                                        &lt;li&gt;circle&lt;/li&gt;
+                                        &lt;li&gt;square&lt;/li&gt;
+                                        &lt;li&gt;none&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/dd&gt;
+
+                            &lt;dt&gt;Ordered Lists&lt;/dt&gt;
+                                &lt;dd&gt;have three main attribute
+                                    &lt;ol type="1"&gt;
+                                        &lt;li&gt;type
+                                            &lt;ul&gt;
+                                                &lt;li&gt;type&lt;/li&gt;
+                                                &lt;li&gt;start&lt;/li&gt;
+                                                &lt;li&gt;reversed&lt;/li&gt;
+                                            &lt;/ul&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;start&lt;/li&gt;
+                                        &lt;li&gt;reversed&lt;/li&gt;
+                                    &lt;/ol&gt;
+                                &lt;/dd&gt;
+
+                            &lt;dt&gt;Definition Lists&lt;/dt&gt;
+                                &lt;dd&gt; have some definition inside them&lt;/dd&gt;
+                    
+                        &lt;/dl&gt;
+                    </code></pre>
+                    
+                    <dl class="final-example-list">
+                        <dt>Unordered lists</dt>
+                        <dd> CSS list-style-type
+                            <ul>
+                                <li>disc</li>
+                                <li>circle</li>
+                                <li>square</li>
+                                <li>none</li>
+                            </ul>
+                        </dd>
+
+                        <dt>Ordered Lists</dt>
+                        <dd>have three main attribute
+                            <ol type="1">
+                                <li>type
+                                    <ul>
+                                        <li>type</li>
+                                        <li>start</li>
+                                        <li>reversed</li>
+                                    </ul>
+                                </li>
+                                <li>start</li>
+                                <li>reversed</li>
+
+                            </ol>
+                        </dd>
+
+
+                        <dt>Definition Lists</dt>
+                        <dd> have some definition inside them</dd>
+                        
+                </dl>
+                
+
+                </aside>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+/*Start: Element style section*/
+body{
+    background-color: #FFF3E0;
+    color: #424242;
+}
+h1{
+    color:#BF360C ;
+    text-align: center;
+}
+h2,h3{
+    color: #D84315;
+    text-align: center;
+}
+pre{
+    background-color: #c4e88f;
+    width: fit-content;
+    white-space: pre-line;
+    padding: 15px 45px;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+pre:hover{
+    font-weight: 700;
+    background-color: #beea7d;
+}
+/*End: Element style section*/
+/*---------------------------------------------------------------------*/
+/*Srart: option buttons style*/
+.option{
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+.option button{
+    background-color:#FBC02D;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 30px;
+
+}
+.option label{
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: larger;
+    font-weight: 400;
+}
+.option button:hover{
+    background-color: #FF9800;
+}
+/*End: option buttons style*/
+
+.continer{
+    background-color: #FAFAFA;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.final-example{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    background-color: lemonchiffon;
+    padding: 10px 15px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.final-example-pre,
+.final-example-list{
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    font-weight: 400;
+    margin: 10px;
+    padding: 10px;
+}
+.final-example-list{
+    background-color: rgb(91, 158, 91);
+    width: fit-content;
+    border-radius: 30px;
+}
+
+.final-example-pre > pre:hover,
+.final-example-list:hover{
+    font-size: larger;
+    font-weight: 700;
+    font-style: italic;
+    color: orangered;
+    background-color: white;
+}
