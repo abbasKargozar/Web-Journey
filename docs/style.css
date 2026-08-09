@@ -1,0 +1,208 @@
+
+/*-----------------------------CSS Preamble------------------------------*/
+/*Light mode*/
+:root {
+  /* Back Ground */
+  --bg-main: #d2dbfd;
+  --bg-secondary: #9db4f7;
+  --header-bg: #0F172A;
+
+  --bg-poster: #E8F0FF;
+  --bg-code: #E2E8F0;
+
+  /* Text */
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+
+  /*Border Margin*/
+  --border-color: #D7E0F2;
+
+  /*Main Button*/
+  --cta-color: #FF6B35;
+  --cta-hover: #E85A24;
+
+  /*Sub boutton*/
+  --btn-bg: #2563EB;
+  --btn-text: #FFFFFF;
+  --btn-hover: #1D4ED8;
+  --btn-menu-hover:#4fa49eda;
+
+  /* Suggested additions */
+  --focus-ring: #38BDF8;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #de0808;
+  --link: #2563EB;
+  --shadow: rgba(15, 23, 42, 0.08);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  /* Back Ground */
+  --bg-main: #0B1220;
+  --bg-secondary: #111827;
+  --header-bg: #020617;
+
+  --bg-poster: #1E293B;
+  --bg-code: #020617;
+
+  /* Text */
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+
+  /*Border Margin*/
+  --border-color: #334155;
+
+  /*Main Button*/
+  --cta-color: #FF7A45;
+  --cta-hover: #FF9A6B;
+
+  /*Sub Button*/
+  --btn-bg: #38BDF8;
+  --btn-text: #0B1220;
+  --btn-hover: #7DD3FC;
+  --btn-menu-hover:#4c63e7da;
+
+
+  /* Suggested additions */
+  --focus-ring: #38BDF8;
+  --success: #34D399;
+  --warning: #FBBF24;
+  --danger: #fa1212;
+  --link: #7DD3FC;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+
+/*---------------------------------Start CSS--------------------------------*/
+body{
+    background-color: var(--bg-main);
+    margin: 0px;
+    padding: 0px;
+}
+
+.continer{
+  width: 960px;
+  margin: 0 auto;
+  padding: 0%;
+  background-color: var(--bg-secondary);
+
+}
+/*-----------------------------------Top Header------------------------------*/
+.top-title{
+  background-color: var(--bg-poster);
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  gap: 50px;
+}
+/*-------------------------Title--------------------------*/
+.top-title h1{
+  grid-column: 2;
+  text-align: center;
+  color: var(--text-main);
+}
+
+
+/*----------------Theme Changer Buttom--------------------*/
+#theme-toggle{
+  background-color: var(--cta-color);
+  color: var(--btn-text);
+  height: 40px;
+  border-radius: 25px;
+  grid-column: 3;
+  align-self: center;
+  margin: 5px;
+}
+
+#theme-toggle:hover{
+  background-color: var(--cta-hover);
+}
+
+/*---------------------------------Start: Menu bar--------------------------------*/
+.menu-section{
+  background-color: var(--header-bg);
+  margin-bottom: 35px;
+}
+.main-menu{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.main-menu, .sub-menu{
+  list-style: none;
+  padding: 10px;
+  margin: 0px;
+}
+
+.has-sub-menu{
+  position: relative;
+}
+.sub-menu{
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 30%;
+}
+
+.has-sub-menu:hover > .sub-menu{
+  display: block;
+}
+.sub-menu a, .main-menu a{
+  display: block;
+  text-decoration: none;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-size: larger;
+  font-weight: 400;
+  min-width: 150px;
+  white-space: nowrap;
+  
+  text-align: center;
+  padding: 5px;
+  transition: 0.5s ease-in-out;
+
+}
+
+.sub-menu li:hover > a {
+  background-color: var(--btn-menu-hover);
+  transform: scale(1.1);
+}
+
+/*------------------------------End: Menu Bar-------------------------------*/
+
+/*------------------------------Start: Carosel------------------------------*/
+.preview{
+  margin: 30px auto;
+  width: 80%;
+  height: 400px;
+  background-color: var(--focus-ring);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview p{
+  text-align: center;
+  font-size: larger;
+  font-weight:800;
+  color: var(--danger);
+}
+/*------------------------------End: Carosel-------------------------------*/
+
+
+/*------------------------------Start: Footer-------------------------------*/
+footer{
+  height: 40px;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: var(--warning);
+  font-size: x-small;
+  
+}
+/*------------------------------End: Footer-------------------------------*/
