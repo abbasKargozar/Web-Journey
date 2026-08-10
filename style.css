@@ -142,6 +142,7 @@ body{
   display: none;
   top: 100%;
   left: 30%;
+  z-index: 100;
 }
 
 .has-sub-menu:hover > .sub-menu{
@@ -171,22 +172,66 @@ body{
 /*------------------------------End: Menu Bar-------------------------------*/
 
 /*------------------------------Start: Carosel------------------------------*/
-.preview{
-  margin: 30px auto;
+
+.carosel-continer{
+  position: relative;
+  overflow: hidden;
+  margin: 2rem auto;
   width: 80%;
-  height: 400px;
-  background-color: var(--focus-ring);
+  max-width: 800px;
   border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0,0.1);
+  background-color: orangered;
+}
+
+/*---------Carosel track----------*/
+.carosel-track{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+}
+
+.carosel-track::-webkit-scrollbar{
+  display: none;
+}
+
+.carosel-slide{
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
-.preview p{
-  text-align: center;
-  font-size: larger;
-  font-weight:800;
-  color: var(--danger);
+/*---------Carosel nav----------*/
+.carosel-nav{
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.nav-dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(250, 117, 0, 0.704);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+
+.nav-dot:hover {
+  background-color: rgb(243, 8, 8);
 }
 /*------------------------------End: Carosel-------------------------------*/
 
