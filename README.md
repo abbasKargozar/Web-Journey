@@ -12,5 +12,5 @@ Using **GitHub Pages**, I have made this repository live, and I will continue ad
 
 The current `index.html` is intentionally simple and works as a navigation page for all projects. As the repository grows, I may redesign it, but for now I like its clean, list-style appearance.
 
-[![Project preview](docs/figure/preview.png)](https://abbaskargozar.github.io/Web-Journey/docs/figure/preview.png)
+[![Project preview](figure/preview.png)](https://abbaskargozar.github.io/Web-Journey/figure/preview.png)
 
