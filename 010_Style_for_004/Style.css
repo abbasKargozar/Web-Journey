@@ -1,0 +1,186 @@
+/*==================General Setting=======================*/
+
+:root {
+    --bg-primary: #F2EEF9;      
+    --bg-secondary: #FFFFFF;  
+    --bg-head:  #efdcdc;
+    --bg-abs: #f5deb3b3;
+    --bg-art: #f5deb3de;
+    --bg-card: #FCFAFF;         
+    --bg-code: #b9ceaf; 
+    --bg-footer: #ec8787;
+    --text-title: #150B2B;       
+    --text-subtitle: #341A47;     
+    --text-body: #2E2842;        
+    --text-table: #ef0f0fcc;       
+    --accent-pink: #FF2A75;      
+    --accent-cyan: #00F0FF;       
+    --accent-purple: #B026FF;     
+  
+    --border-neon: rgba(176, 38, 255, 0.2); 
+    
+    --shadow-pink: 0 8px 25px rgba(255, 42, 117, 0.12);
+    --shadow-cyan: 0 8px 25px rgba(0, 240, 255, 0.15);
+    --shadow-card: 0 4px 20px rgba(176, 38, 255, 0.08);
+}
+
+
+[data-theme="dark"]{
+    --bg-primary: #0B0C15;
+    --bg-secondary: #151929;
+    --bg-head:  #3b2f63;
+    --bg-abs: #4d527bb3;
+    --bg-art: #4d527be3;
+    --bg-card: #181c2ed9;
+    --bg-code: #235018d8;
+    --bg-footer: #2f1e65;
+    --text-title: #00F0FF;
+    --text-subtitle: #FF2A75;
+    --text-body: #D0D3E6;
+    --text-muted: #7A80A4;
+    --accent-pink: #FF2A75;
+    --accent-cyan: #00F0FF;
+    --accent-purple: #B026FF;
+    --border-neon: rgba(0, 240, 255, 0.2);
+    --glow-pink: 0 0 25px rgba(255, 42, 117, 0.4);
+}
+
+/*==================Titel=======================*/
+body{
+    background-color: var(--bg-primary);
+}
+.content{
+    width: 80%;
+    background-color: var(--bg-secondary);
+    margin: 10px auto;
+}
+
+.title{
+    display: grid;
+    grid-template-columns: minmax(100,200) auto minmax(100,200);
+    background-color: var(--bg-head);
+    align-items: center;
+}
+
+#style-changer{
+    grid-column: 1;
+    justify-self: center;
+    margin: 5px;
+}
+
+.title > h1{
+    grid-column: 2;
+    justify-self: center;
+    margin: 5px;
+    color: var(--text-title);
+}
+
+#theme-toggle{
+    grid-column: 3;
+    justify-self: center;
+    margin: 5px;
+}
+
+dl > dt{
+    color: red;
+    font-weight: 700;
+}
+/*==================Abstract=======================*/
+
+.abstract{
+    padding: 20px;
+    text-align: justify;
+    color: var(--text-body);
+    background-color: var(--bg-abs);
+    border: 1px solid var(--border-neon);
+    border-bottom: none;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin: 40px 30px 20px 30px;
+}
+
+.article{
+    padding: 20px;
+    margin: 40px 30px 20px 30px;
+    border: 1px solid var(--border-neon);
+    border-top: none;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-align: justify;
+    background-color: var(--bg-art);
+    color: var(--text-body);
+    margin-bottom: 10px;
+}
+.abstract ul{
+    text-decoration: none;
+}
+
+.abstract a{
+    display: block;
+    font-weight: 800;
+    font-weight: 1.3em;
+    margin-bottom: 8px;
+    color: var(--text-table);
+}
+
+/*==================Code Section=======================*/
+
+
+.sample-hor{
+    background-color: var(--bg-code);
+    display: flex;
+    flex-direction: row;
+    border-radius: 25px;
+    font-weight: 800;
+    white-space: pre;
+}
+.sample-hor ul{
+    align-content: center;
+    list-style-position: inside;
+    padding: 5px;
+    margin: 5px auto;
+    border-left: 1px dotted rgb(159, 117, 117);
+}
+
+.sample-hor a{
+    color: var(--text-body);
+}
+
+/*-----------------------Vertical------------------------*/
+
+.sample-ver{
+    background-color: var(--bg-code);
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    font-weight: 800;
+    overflow-x: auto;
+    border: 1px solid var(--border-neon);
+
+}
+.sample-ver ul{
+    align-content: center;
+    list-style-position: inside;
+    padding: 5px;
+    margin: 5px auto;
+    border-top: 1px dotted rgb(159, 117, 117);
+}
+
+.sample-ver a{
+    color: var(--text-body);
+}
+
+.sample-ver iframe, .sample-ver small{
+    align-self: center;
+}
+.sample-ver small{
+    display: block;
+    margin-bottom: 10px;
+}
+/*==================Footer=======================*/
+
+footer{
+    background-color: var(--bg-footer);
+    margin: 0 auto;
+    text-align: center;
+}
