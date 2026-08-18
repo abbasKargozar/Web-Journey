@@ -25,7 +25,8 @@
 }
 
 
-[data-theme="dark"]{
+[data-theme="dark"],
+html:has(.theme-toggle:checked){
     --bg-primary: #0B0C15;
     --bg-secondary: #151929;
     --bg-head:  #3b2f63;
@@ -85,7 +86,32 @@ dl > dt{
     color: red;
     font-weight: 700;
 }
+
+/*==================Change Theme===================*/
+.theme-toggle{
+    display: none;
+}
+
+.label-toggle{
+    grid-column: 3;
+    display: inline-block;
+    justify-self: center;
+    width: 40px;
+    height: 80px;
+    background-image: url(../figure/on.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.theme-toggle:checked + .label-toggle{
+    background-image: url(../figure/off.png);
+}
+
+
 /*==================Abstract=======================*/
+
+
 
 .abstract{
     padding: 20px;
@@ -176,6 +202,22 @@ dl > dt{
 .sample-ver small{
     display: block;
     margin-bottom: 10px;
+}
+
+/*==================Go 2 top=====================*/
+.go-to-top{
+    display: block;
+    background-image: url(../figure/goTop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+
+    position: fixed;
+    bottom: 30px;
+    right: 80px;
+    z-index: 10000;
 }
 /*==================Footer=======================*/
 

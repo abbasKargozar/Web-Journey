@@ -7,6 +7,31 @@
     <script src="../007_Style_for_001/javaScript.js" defer></script>
     <script src="../JavaScript.js" defer></script>
     <title>Link</title>
+
+    <style>
+        /*==================Change Style====================*/
+    .style-pic{
+    display: none;
+    }
+
+    .label-style{
+        grid-column: 1;
+        display: inline-block;
+        justify-self: center;
+        width: 70px;
+        height: 70px;
+        background-image: url(../figure/css.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+    }
+
+    .style-pic:checked + .label-style{
+        background-image:  url(../figure/raw.png);
+    }
+
+    </style>
 </head>
 
 <body>
@@ -14,9 +39,12 @@
 <div class="content"> 
 <div class="title">
 
-    <button id="style-changer">Click to disable Style</button>
+    <input id="style-changer" type="checkbox" class="style-pic">
+    <label for="style-changer" class="label-style"></label>
+
     <h1>HTML Hyperlinks: A Simple Yet Essential Tool</h1>
-     <button  id="theme-toggle">Change Theme</button>
+     <input type="checkbox" class="theme-toggle" id="theme-toggle">
+     <label for="theme-toggle" class="label-toggle"></label>
 
 </div>
 
@@ -397,7 +425,7 @@
     
 
     
-    <a href="#" style="background-color: rgba(128, 128, 128, 0.7); width: 960px; margin: 0 auto; padding:10px;">^Go to top ^</a>
+    <a href="#" class="go-to-top"></a>
 
 </main>
 
